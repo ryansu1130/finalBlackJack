@@ -1,0 +1,130 @@
+/* .hidden {
+	display: none;
+} */
+body {
+	font-family: Alice;
+	font-size: 20px;
+}
+
+.backdrop {
+	background-color: rgba(128, 128, 128, 0.75);
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.settings-box {
+	background-color: rgb(252, 193, 84);
+	border: 3px solid black;
+	border-radius: 10%;
+	z-index: 1010;
+	position: fixed;
+	top: 20%;
+	bottom: 20%;
+	left: 20%;
+	right: 20%;
+	padding: 2% 10%;
+	margin: 0;
+	overflow: hidden;
+}
+
+.title {
+	font-size: 45px;
+	margin: 5% 0 5% 0;
+}
+
+p {
+	text-align: center;
+	vertical-align: top;
+	margin: 5px 0;
+	font-weight: 600;
+	font-size: 30px;
+}
+
+.mute {
+	height: 35px;
+	width: 35px;
+	position: relative;
+	top: 10px;
+}
+
+.slider {
+	width: 100%;
+	cursor: pointer;
+	appearance: none;
+	outline: none;
+	border: crimson 3px solid;
+	border-radius: 30px;
+	height: 30px;
+	background-color: rgba(46, 63, 15, 0.555);
+	position: relative;
+	z-index: 2000;
+}
+
+.slider::-webkit-slider-thumb{
+	appearance: none;
+	width: 30px;
+	height: 30px;
+	background-color: gold;
+	border: crimson 2px solid;
+	border-radius: 30px;
+}
+.slider::-webkit-slider-thumb:hover{
+	transition: all;
+	transition-duration: .2s;
+	width: 50px;
+	height: 50px;
+}
+
+select {
+	width: 150px;
+	padding: 10px 20px;
+	margin: 0;
+	outline: none;
+	font-weight: 700;
+	font-size: 70%;
+}
+
+option {
+	font-size: 150%;
+	font-weight: 700;
+}
+
+option[value="light"] {
+	background-color: lavenderblush;
+}
+
+
+option[value="dark"] {
+	color: whitesmoke;
+	background-color: black;
+}
+
+#save {
+	background-color: antiquewhite;
+	display: inline-block;
+	position: relative;
+	left: 20%;
+	width: 90px;
+	height: 50px;
+	font-weight: 700;
+	font-size: 16px;
+	border: 2px solid cadetblue;
+	border-radius: 20px;
+}
+
+#close {
+	background-color: antiquewhite;
+	display: inline-block;
+	position: relative;
+	left: 45%;
+	width: 90px;
+	height: 50px;
+	font-weight: 700;
+	font-size: 16px;
+	border: 2px solid cadetblue;
+	border-radius: 20px;
+}

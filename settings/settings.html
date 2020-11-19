@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Alice&family=Cardo&family=Cormorant:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="settings.css">
+	<script src="settings.js" charset="utf-8" defer></script>
+	<title>Settings</title>
+</head>
+<body>
+	<div class="backdrop hidden"></div>
+
+	<div class="settings-box hidden">
+		<h2 class="title">Settings</h2>
+		<p>Music mute:  
+			<input type="checkbox" class="mute" value="music"></input>
+		</p>
+		<input id="music-slider" type="range" min="0" max="100" value="50" class="slider">
+	
+		<p>Sound effects mute:  
+			<input type="checkbox" class="mute" value="SFX"> </input>
+		</p>
+		<input id="SFX-slider" type="range" min="0" max="100" value="50" class="slider">
+			
+		<p>Theme:  
+			<select id="theme">
+				<option value="light" selected>Light</option>
+				<option value="dark">Dark</option>
+			</select>
+		</p>
+		<button id="save">SAVE</button>
+		<button id="close">close</button>
+	</div>
+</body>
+</html>
