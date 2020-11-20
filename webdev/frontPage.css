@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #a79db3;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.about-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #281657;
+  text-decoration: none;
+  padding-right: 10px;
+  text-align: right;
+  justify-content: space-between;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#nav-button {
+  margin: 10px;
+  background-color: #281657;
+  color: white;
+  text-align: center;
+  border-style: none;
+}
+
+#nav-button2 {
+  margin: 10px;
+  background-color: #e3a712;
+  color: black;
+  text-align: center;
+  border-style: none;
+  font-weight: bolder;
+}
+
+.other-buttons {
+  padding-top: 15px;
+}
+
+#background-picture {
+  position: absolute;
+  padding-left: 0px;
+  height: 100%;
+  width: 100%;
+
+}
+
+#logo {
+  height: 90px;
+  width: 135px;
+  text-align: left;
+
+}
+
+
+.balance-menu {
+  text-align: center;
+  font-weight: bold;
+
+}
+
+
+.nav-button {
+  margin: 10px;
+}
+
+.black-bar {
+  background-color: black;
+  color: #e6a70b;
+  text-align: center;
+  height: 30px;
+  padding-top: 0.5px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #a79db3;
+  padding-top: 100px;
+  border-style: none;
+  border-radius: 5px;
+  align-self: center;
+}
+
+
+.card {
+  display: block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 3px solid;
+  margin: 25px;
+  box-shadow: 5px, 25px gray;
+  border-radius: 5px;
+  border-color: #e6a70b;
+  align-self: center;
+
+
+}
+
+.card-img-top {
+  border-style: none;
+}
+
+.card-body {
+  display: block;
+  background-color: #1b212e;
+  border-style: none;
+  color: white;
+
+}
+
+#play-now {
+  display: block;
+  text-align: center;
+  background-color: #9e63e6;
+  border-style: none;
+}
+
+#coming-soon {
+  display: block;
+  background-color: #9e63e6;
+  color: #5d5961;
+  border-style: none;
+}
