@@ -13,24 +13,32 @@
 
 	<div class="settings-box hidden">
 		<h2 class="title">Settings</h2>
-		<p>Music mute:  
-			<input type="checkbox" class="mute" value="music"></input>
-		</p>
-		<input id="music-slider" type="range" min="0" max="100" value="50" class="slider">
-	
-		<p>Sound effects mute:  
-			<input type="checkbox" class="mute" value="SFX"> </input>
-		</p>
-		<input id="SFX-slider" type="range" min="0" max="100" value="50" class="slider">
-			
-		<p>Theme:  
-			<select id="theme">
-				<option value="light" selected>Light</option>
-				<option value="dark">Dark</option>
-			</select>
-		</p>
-		<button id="save">SAVE</button>
-		<button id="close">close</button>
+		<div class="settings-content">
+			<label class="volume">Music volume:  
+				<br>
+				<input type="checkbox" class="mute" value="music">
+				<span class="mute-icon"></span>
+				<input id="music-slider" type="range" min="0" max="100" value="50" class="slider"></input>
+			</label>
+		
+			<label class="volume">Sound effects volume:  
+				<br>
+				<input type="checkbox" class="mute" value="SFX"> </input>
+				<span class="mute-icon"></span>
+				<input id="SFX-slider" type="range" min="0" max="100" value="50" class="slider"></input>
+			</label>
+				
+			<label>Theme:  
+				<select id="theme">
+					<option value="light" selected>Light</option>
+					<option value="dark">Dark</option>
+				</select>
+			</label>
+		</div>
+		<div class="flex">
+			<button id="save">SAVE</button>
+			<button id="close">CLOSE</button>
+		</div>
 	</div>
 </body>
 </html>
