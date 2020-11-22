@@ -1,0 +1,21 @@
+About Us (Q&A)
+
+What is Kaami?
+This website is known as Kaami Co. It is the product of Oregon State University's Fall 2020 CS290 Web development group 8's Final project. Kaami is desgined to be a Casino on the main page, with games modulated and integrated onto it. It is for people who enjoy betting have a go at betting in different games, on the far stretch of this project we hope to be able to implement accounts, account tied balances, and other games such as Poker, Slots, Roulette.
+
+Who are we?
+We are a group of student taking Web Development CS290 in Oregon State University. We've worked hard through these three weeks starting from November 17, 2020 to prodly bring about Kaami Co., a casino page that is modulated with games. The 4 of us are located all across the world due to the 2020 COVID 19 pandemic. We have people that are currently in Oregon where the root of this course is, as well as people that are currently in Malaysia and Singapore. Working around this was not easy with the time differences, the number of final projects and assignments that were assigned by other courses makes it hard to put time into Kaami, but careful planing and dedication gave rise to the current product.
+
+Why casino?
+This is the product of our final project, lasting 2 - 3 weeks. We have discussed multiple projects and find this the most scalable idea which is agreeable amongst the 4 of us. Each of us are able to spend the minimal work done to get the page to meet the requirements and also to go the extra mile to turn this page into a grand casino.
+
+----------CREW----------
+Ryan
+
+Fish
+
+Sam
+My name is Sam. I have a Chinese and Vietnamese background which makes me mix. My love for business mixed with Coding has led me down an inevitable path: botting. In my down time, I enjoy playing Tennis and Basketball and I would absolutely give you the mf work. Also I type 160 words per minute, kind of a flex, I know. I am apart of Kaami to develop the first US-approved online Casino. My role for the team is being responsible of the accoutrements of audio and visual components of the website. I'm also co-responsible for the HTML and CSS portions of the website.
+
+Lyon
+I'm a Malaysian that transfered to OSU starting January 2020. I am currently residing in Malaysia due to the Coronavirus Pandemic. Normally I would endorse in sports, and mostly badminton as it is very famous in my country, but it is no longer the case because I am awake at night for courses and no one is playing at that time. The role I'm playing in this project is to assist with the development of blackJack, develop an about us page, and to develop settings throughout the site.
