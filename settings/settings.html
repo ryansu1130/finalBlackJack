@@ -16,22 +16,22 @@
 		<div class="settings-content">
 			<label class="volume">Music volume:  
 				<br>
-				<input type="checkbox" class="mute" value="music">
+				<input type="checkbox" class="mute" id="music-button" value="music">
 				<span class="mute-icon"></span>
 				<input id="music-slider" type="range" min="0" max="100" value="50" class="slider"></input>
 			</label>
 		
 			<label class="volume">Sound effects volume:  
 				<br>
-				<input type="checkbox" class="mute" value="SFX"> </input>
+				<input type="checkbox" class="mute" id="SFX-button" value="SFX"> </input>
 				<span class="mute-icon"></span>
 				<input id="SFX-slider" type="range" min="0" max="100" value="50" class="slider"></input>
 			</label>
 				
 			<label>Theme:  
 				<select id="theme">
-					<option value="light" selected>Light</option>
-					<option value="dark">Dark</option>
+					<option value="light" class="light" selected>Light</option>
+					<option value="dark" class="dark">Dark</option>
 				</select>
 			</label>
 		</div>

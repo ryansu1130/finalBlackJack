@@ -109,12 +109,12 @@ option {
 	font-weight: 700;
 }
 
-option[value="light"] {
+.light {
 	background-color: lavenderblush;
 }
 
 
-option[value="dark"] {
+.dark {
 	color: whitesmoke;
 	background-color: black;
 }
