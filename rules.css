@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #a79db3;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.about-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #281657;
+  text-decoration: none;
+  padding-right: 10px;
+  text-align: right;
+  justify-content: space-between;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#nav-button {
+  margin: 10px;
+  background-color: #281657;
+  color: white;
+  text-align: center;
+  border-style: none;
+}
+
+#nav-button2 {
+  margin: 10px;
+  background-color: #e3a712;
+  color: black;
+  text-align: center;
+  border-style: none;
+  font-weight: bolder;
+}
+
+.other-buttons {
+  padding-top: 15px;
+}
+
+#background-picture {
+  position: absolute;
+  padding-left: 0px;
+  height: 100%;
+  width: 100%;
+
+}
+
+#logo {
+  height: 90px;
+  width: 135px;
+  text-align: left;
+
+}
+
+
+.balance-menu {
+  text-align: center;
+  font-weight: bold;
+
+}
+
+
+.nav-button {
+  margin: 10px;
+}
+
+.black-bar {
+  background-color: black;
+  color: #e6a70b;
+  text-align: center;
+  height: 30px;
+  padding-top: 0.5px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #a79db3;
+  padding-top: 100px;
+  border-style: none;
+  border-radius: 5px;
+  justify-content: center;
+
+}
+
+/* To enable light mode, turn background-color off, and turn color off */
+.card {
+  width: 1000px;
+  display: block;
+  background-color: #1b212e;
+  border-radius: 50px;
+  color: white;
+  border: 5px #e6a70b solid;
+}
+
+.card-img-top {
+  border-style: none;
+}
+
+#heading{
+  border-radius: 5px;
+  font-size: 20px;
+  max-width: 250px;
+  padding: 1rem;
+  position: relative;
+  background: linear-gradient(to right, red, purple);
+  padding: 3px;
+
+}
+
+#titleSize{
+  font-size: 90px;
+}
+
+#blackjackImg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border: 5px red solid;
+  border-radius: 50px;
+}
+
+#HowToPlay{
+  text-align: center;
+}
+
+#valueOfCards{
+  text-align: center;
+}
+
+#valueOfCards li{
+  list-style-type: none;
+}
