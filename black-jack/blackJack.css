@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+
+.about-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #281657;
+    text-decoration: none;
+    padding-right: 10px;
+    text-align: right;
+    justify-content: space-between;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  #nav-button {
+    margin: 10px;
+    background-color: #281657;
+    color: white;
+    text-align: center;
+    border-style: none;
+  }
+  
+  #nav-button2 {
+    margin: 10px;
+    background-color: #e3a712;
+    color: black;
+    text-align: center;
+    border-style: none;
+    font-weight: bolder;
+  }
+
+  .other-buttons {
+    padding-top: 15px;
+  }
+  
+  #logo {
+    height: 90px;
+    width: 135px;
+    text-align: left;
+  }
+
+  #background-picture {
+    position: absolute;
+    padding-left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: none;
+  }
+
+  .black-bar {
+    background-color: black;
+    color: #e6a70b;
+    text-align: center;
+    height: 30px;
+    padding-top: 0.5px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .balance-menu {
+    text-align: center;
+    font-weight: bold;
+  
+  }
+
+  .content{
+      display: flex;
+  }
+
+  .chip-container {
+    display: inline-block;
+    position: relative;
+    color: white;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 5px;
+    border: 3px solid;
+    margin: 25px 3px 25px 25px;
+    
+    border-radius: 5px;
+    border-color: #e6a70b;
+    min-width: 100px;
+    background-color: #1b212e;
+}
+  
+  #chip-buttons{
+    display: grid;
+    justify-content: center;
+
+  }
+
+  #chip-buttons img {
+      max-width: 50px;
+      max-height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .table-container{
+    display: flex;
+    position: relative;
+    border: 3px solid;
+    margin: 25px;
+    border-radius: 5px;
+    border-color: #e6a70b;
+    width: 100%;
+  }
+
+  .table-container img{
+      width: 100%;
+      height: 100%;
+  }
+
+  #start-button{
+    min-width: fit-content;
+    display: block;
+    text-align: center;
+  }
