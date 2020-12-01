@@ -137,3 +137,8 @@ body {
 #valueOfCards li{
   list-style-type: none;
 }
+
+.endPhaseLineGap{
+  position: relative;
+  top: 10px;
+}

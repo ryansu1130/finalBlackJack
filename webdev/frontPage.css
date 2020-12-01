@@ -1,5 +1,258 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
+/* Settings VVVVVVVVVV Settings VVVVVVVV SETTINGS VVVVVVVV */
+.backdropSettings {
+	background-color: rgba(128, 128, 128, 0.75);
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.settings-box {
+	background-color: #281657;
+	border: 3px solid #e3a712;
+	border-radius: 5%;
+	z-index: 1010;
+	position: fixed;
+	top: 30%;
+	bottom: 30%;
+	left: 25%;
+	right: 25%;
+	padding: 4% 7%;
+	margin: 0;
+	overflow: hidden;
+	min-width: 380px;
+	min-height: 420px;
+	font-weight: lighter;
+}
+
+.titleSettings {
+	font-size: 40px;
+	margin: 2% 0 3% 0;
+	position: relative;
+	right: 36px;
+	top: -20px;
+}
+
+.settings-content {
+	padding: 2px 0;
+	display: flex;
+	flex-flow: column wrap;
+	overflow: hidden;
+}
+
+label {
+	vertical-align: top;
+	font-weight: 500;
+	font-size: 28px;
+}
+
+.mute {
+    position: relative;
+    left: -100%;
+}
+
+.mute + .mute-icon:after {
+	content: url(unmute.png);
+}
+
+.mute:checked + .mute-icon:after {
+    content: url(mute.png);
+}
+
+.slider {
+	width: 75%;
+	cursor: pointer;
+	appearance: none;
+	outline: none;
+	border: #e3a712 3px solid;
+	border-radius: 30px;
+	height: 25px;
+	background-color: #a79db3;
+	position: relative;
+	z-index: 2000;
+}
+
+.slider::-webkit-slider-thumb{
+	appearance: none;
+	width: 30px;
+	height: 30px;
+	background-color: #281657;
+	border: #e3c412 2px solid;
+	border-radius: 30px;
+}
+.slider::-webkit-slider-thumb:hover{
+	transition: all;
+	transition-duration: .2s;
+	width: 40px;
+	height: 40px;
+}
+
+select {
+	width: 225px;
+	height: 59px;
+	padding: 10px 20px;
+	margin: 0;
+	outline: none;
+	font-weight: 700;
+	font-size: 70%;
+	border-radius: 10px;
+}
+
+option {
+	font-size: 150%;
+	font-weight: 700;
+}
+
+.light {
+	background-color: lavenderblush;
+}
+
+
+.dark {
+	color: whitesmoke;
+	background-color: black;
+}
+
+.flex {
+	margin-top: 25px;
+	display: flex;
+	justify-content: space-around;
+}
+
+#saveSettings,
+#closeSettings {
+	font-family: 'Open Sans', sans-serif;
+	background-color: antiquewhite;
+	display: inline-block;
+	width: 80px;
+	height: 45px;
+	font-weight: 700;
+	font-size: 18px;
+	border: 2px solid cadetblue;
+	border-radius: 20px;
+	top: 10px;
+}
+
+#saveSettings:hover,
+#closeSettings:hover {
+	transform: scale(1.15);
+	transition: all;
+	transition-duration: .2s;
+}
+
+/* SETTINGS ^^^^^^^ SETTINGS ^^^^^^^ SETTINGS ^^^^^^^^^ SETTINGS ^^^^^ */
+
+
+/* About ↓↓↓↓↓↓↓↓↓↓ Us  About ↓↓↓↓↓↓↓↓↓↓ Us  About ↓↓↓↓↓↓↓↓↓↓ Us  */
+
+.hidden {
+	display: none;
+}
+
+#X {
+	position: fixed;
+	height: 50px;
+	width: 50px;
+	right: 23%;
+	top: 4%;
+	background-color: #e3a712;
+	font-weight: bolder;
+	border-radius: 50%;
+	font-size: 100%;
+  cursor: pointer;  /* Ryan Added cursor: pointer */
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	color: white;
+}
+
+.backdrop {
+	background-color: rgba(128, 128, 128, 0.75);
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.about-us {
+	background-color: #281657;
+	border: 3px solid #e3a712;
+	z-index: 1010;
+	position: fixed;
+	top: 2%;
+	bottom: 2%;
+	left: 20%;
+	right: 20%;
+	padding: 1.5% 3%;
+	margin: 0;
+	min-width: 650px;
+	min-height: 420px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.title {
+	font-size: 45px;
+	margin: 2% 0 3% 0;
+	position: relative;
+	right: 15px;
+}
+
+h2 {
+	color: #e3a712;
+}
+p {
+	font-size: 14px;
+}
+
+.faces {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+.face {
+	max-width: 300px;
+	margin-bottom: 20px;
+}
+
+.devPhoto {
+	display: block;
+	max-width: 280px;
+	max-height: 300px;
+
+}
+
+h4 {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+#close {
+	position: relative;
+	margin: 25px 46%;
+	width: 90px;
+	height: 30px;
+	background-color: #e3a712;
+	font-weight: bolder;
+	border-radius: 10px;
+	font-family: sans-serif;
+	font-size: 90%;
+  cursor: pointer; /* Ryan Added cursor: pointer */
+}
+/* About ^^^^^^^^^^ Us  About ^^^^^^^^^^ Us  About ^^^^^^^^^^ Us  */
+
+
+
+/* Home ↓↓↓↓↓↓↓↓↓↓ Page  Home ↓↓↓↓↓↓↓↓↓↓ Page  Home ↓↓↓↓↓↓↓↓↓↓ Page  */
 body {
   margin: 0px;
   padding: 0px;
@@ -19,7 +272,23 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-#nav-button {
+#nav-button-rules {
+  margin: 10px;
+  background-color: #281657;
+  color: white;
+  text-align: center;
+  border-style: none;
+}
+
+#nav-button-settings {
+  margin: 10px;
+  background-color: #281657;
+  color: white;
+  text-align: center;
+  border-style: none;
+}
+
+#nav-button-about {
   margin: 10px;
   background-color: #281657;
   color: white;
@@ -52,7 +321,7 @@ body {
   height: 90px;
   width: 135px;
   text-align: left;
-
+  cursor: pointer; /* Ryan Added cursor: pointer */
 }
 
 
@@ -71,7 +340,7 @@ body {
   background-color: black;
   color: #e6a70b;
   text-align: center;
-  height: 30px;
+  height: 35px;
   padding-top: 0.5px;
   font-family: 'Open Sans', sans-serif;
 }
@@ -107,6 +376,7 @@ body {
 
 .card-img-top {
   border-style: none;
+	min-height: 190px;
 }
 
 .card-body {
@@ -130,3 +400,4 @@ body {
   color: #5d5961;
   border-style: none;
 }
+/* Home ^^^^^^^^^^ Page  Home ^^^^^^^^^^ Page  Home ^^^^^^^^^^ Page  */
