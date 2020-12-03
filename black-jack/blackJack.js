@@ -32,6 +32,11 @@ function popCard(){
 }
 
 function dealHand(hand){
+	if(!hand){
+		console.log(" == dealHand(hand) faulted with invalid argument");
+	}
+	if(deck.length < 53)
+		addDeck();
 	hand.push(popCard());
 }
 
@@ -51,13 +56,15 @@ function init(){
 }
 
 function count(hand){
+	if(!hand){
+		console.log(" == count(hand) faulted with invalid argument");
+	}
 	let sum = 0;
 	if(hand.length == 2){
 		if(parseInt(hand[0].slice(0, -1)) == 1 && parseInt(hand[1].slice(0, -1)) >= 10 || 
 			parseInt(hand[0].slice(0, -1)) >= 10 && parseInt(hand[1].slice(0, -1)) == 1){
 			return 21;
 		}
-		//A as 11 or 1 implement
 	}
 	for(let i = 0; i < hand.length; ++i){
 		let n = parseInt(hand[i].slice(0, -1));
@@ -68,45 +75,63 @@ function count(hand){
 			sum += n;
 		}
 	}
+	for(let i = 0; i < hand.length; ++i){
+		let n = parseInt(hand[i].slice(0, -1));
+		if(n == 1){
+			if(sum + 10 <= 21)
+				sum += 10;
+			else
+				break;
+		}
+	}
 	return sum;
 }
 
 function compHand(player, dealer){
-	if(count(player) > 21){
+	if(!player || !dealer){
+		console.log(" == compHand(player, dealer) faulted with invalid argument(s)");
+	}
+	let playerPoints = count(player);
+	let dealerPoints = count(dealer);
+	if(playerPoints > 21){
 		return 1;
 	}
-	if(count(dealer) > 21){
+	if(dealerPoints > 21){
 		return -1;
 	}
-	if(count(player) == count(dealer)){
+	if(playerPoints == dealerPoints){
 		return 0;
 	}
-	if(count(player) > count(dealer)){
+	if(playerPoints > dealerPoints){
 		return -1;
 	}
-	if(count(player) < count(dealer)){
+	if(playerPoints < dealerPoints){
 		return 1;
 	}
 }
 
 function dealerBot(){
-	if(count(dealer) < 21){
-		if(compHand(player, dealer) == -1){
+	while(count(dealer) < 21 && compHand(player, dealer) == -1){
 			dealHand(dealer);
-		}
 	}
 }
 
-/*
+/******************************** deck functions ******************************************
  * init()					- adds 6 decks and deal cards()
  * dealCards()				- clear hands then deal cards to player and dealer
  * dealHand(hand)				- deal 1 card to selected hand
- * dealCards()				- returns total count of hand
+ * count(hand)				- returns total count of hand
  * generateDecks(n) 		- adds n decks onto deck, default n = 1
  * compHand(player, dealer)	- return -1, 0, 1 as player win, tie, dealer win respectively
- */
+ *****************************************************************************************/
 
+function updateBalance(){
+	document.querySelector('#balance').textContent = '$' + balance;
+}
 
+function updateBetAmount(){
+	document.querySelector('#bet-amount').textContent = '$' + betAmount;
+}
 
 
 
@@ -132,26 +157,74 @@ var chip_container = document.getElementById('chip-container');
 
 
 chip5.addEventListener('click', function(){
+	if(balance >= 5){
+		balance -= 5;
+		betAmount += 5;
+		updateBalance();
+		updateBetAmount();
+	}
+	else
+		alert("Insufficient balance to bet " + 5);
 	console.log("==chip5 was clicked");
 });
 
 chip10.addEventListener('click', function(){
+	if(balance >= 10){
+		balance -= 10;
+		betAmount += 10;
+		updateBalance();
+		updateBetAmount();
+	}
+	else
+		alert("Insufficient balance to bet " + 10);
 	console.log("==chip10 was clicked");
 });
 
 chip50.addEventListener('click', function(){
+	if(balance >= 50){
+		balance -= 50;
+		betAmount += 50;
+		updateBalance();
+		updateBetAmount();
+	}
+	else
+		alert("Insufficient balance to bet " + 50);
 	console.log("==chip50 was clicked");
 });
 
 chip100.addEventListener('click', function(){
+	if(balance >= 100){
+		balance -= 100;
+		betAmount += 100;
+		updateBalance();
+		updateBetAmount();
+	}
+	else
+		alert("Insufficient balance to bet " + 100);
 	console.log("==chip100 was clicked");
 });
 
 chip500.addEventListener('click', function(){
+	if(balance >= 500){
+		balance -= 500;
+		betAmount += 500;
+		updateBalance();
+		updateBetAmount();
+	}
+	else
+		alert("Insufficient balance to bet " + 500);
 	console.log("==chip500 was clicked");
 });
 
 chip1000.addEventListener('click', function(){
+	if(balance >= 1000){
+		balance -= 1000;
+		betAmount += 1000;
+		updateBalance();
+		updateBetAmount();
+	}
+	else
+		alert("Insufficient balance to bet " + 1000);
 	console.log("==chip1000 was clicked");
 });
 
@@ -162,8 +235,9 @@ var hit = document.getElementById('hit-button');
 var stand = document.getElementById('stand-button');
 var split = document.getElementById('split-button');
 var start = document.getElementById('start-button');
-var next = document.getElementById('next-hand-button')
-
+var next = document.getElementById('next-hand-button');
+var balance = parseInt(document.querySelector('#balance').textContent.slice(1));
+var betAmount = 0;
 
 bet.addEventListener('click', function(){
 	console.log("==bet was clicked");
@@ -176,7 +250,15 @@ hit.addEventListener('click', function(){
 stand.addEventListener('click', function(){
 	console.log("==stand was clicked");
 	dealerBot();
-	compHand(player, dealer);
+	switch(compHand(player, dealer)){
+		case 1:
+			balance -= betAmount;
+			break;
+		case -1:
+			balance += betAmount;
+	}
+	updateBalance();
+	//call next??????????????????????????????????
 });
 
 split.addEventListener('click', function(){
@@ -185,7 +267,7 @@ split.addEventListener('click', function(){
 
 next.addEventListener('click', function(){
 	console.log("==next was clicked");
-	dealCards();
+	clearHands();
 });
 
 start.addEventListener('click', function(){
@@ -196,4 +278,10 @@ start.addEventListener('click', function(){
 	bet.style.visibility = 'visible';
 	init();
 	// }
+});
+
+// logo to mainpage
+var logo = document.getElementById('logo');
+logo.addEventListener('click', ()=>{
+	window.location = '../webdev/frontPage.html';
 });
