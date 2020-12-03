@@ -175,6 +175,8 @@ hit.addEventListener('click', function(){
 
 stand.addEventListener('click', function(){
 	console.log("==stand was clicked");
+	dealerBot();
+	compHand(player, dealer);
 });
 
 split.addEventListener('click', function(){
@@ -183,6 +185,7 @@ split.addEventListener('click', function(){
 
 next.addEventListener('click', function(){
 	console.log("==next was clicked");
+	dealCards();
 });
 
 start.addEventListener('click', function(){
