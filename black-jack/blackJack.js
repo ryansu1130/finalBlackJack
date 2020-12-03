@@ -241,6 +241,8 @@ var betAmount = 0;
 
 bet.addEventListener('click', function () {
 	console.log("==bet was clicked");
+	hit.style.visibility = 'visible';
+	stand.style.visibility = 'visible';
 });
 
 hit.addEventListener('click', function () {
@@ -249,6 +251,9 @@ hit.addEventListener('click', function () {
 
 stand.addEventListener('click', function () {
 	console.log("==stand was clicked");
+	hit.style.visibility = 'hidden';
+	stand.style.visibility = 'hidden';
+
 	dealerBot();
 	switch (compHand(player, dealer)) {
 		case 1:
@@ -258,7 +263,8 @@ stand.addEventListener('click', function () {
 			balance += betAmount;
 	}
 	updateBalance();
-	//call next??????????????????????????????????
+	clearHands();
+	next.style.visibility = 'visible';
 });
 
 split.addEventListener('click', function () {
@@ -268,6 +274,9 @@ split.addEventListener('click', function () {
 next.addEventListener('click', function () {
 	console.log("==next was clicked");
 	clearHands();
+	next.style.visibility = 'hidden';
+	hit.style.visibility = 'visible';
+	stand.style.visibility = 'visible';
 });
 
 start.addEventListener('click', function () {

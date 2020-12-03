@@ -171,7 +171,7 @@ html {
 #next-hand-button {
   visibility: hidden;
   position: absolute;
-  font-size: x-large;
+  font-size: xx-large;
   right: -550px;
   bottom: 50px;
 }
@@ -192,10 +192,10 @@ html {
 #player-cards {
   display: block;
   position: absolute;
-  /* color: white; */
-  /* border: 3px solid; */
-  /* border-radius: 5px; */
-  /* border-color: #e6a70b; */
+  /* color: white; 
+  border: 3px solid; 
+  border-radius: 5px; 
+  border-color: #e6a70b; */
   bottom: 100px;
   left: 250px;
   height: 350px;
