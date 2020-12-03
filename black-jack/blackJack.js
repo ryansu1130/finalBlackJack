@@ -208,7 +208,7 @@ var chip500 = document.getElementById('500');
 var chip1000 = document.getElementById('1000');
 var chip_container = document.getElementById('chip-container');
 
-function hidechips(){
+function hidechips() {
 	chip_container.style.visibility = 'hidden';
 	chip5.style.visibility = 'hidden';
 	chip10.style.visibility = 'hidden';
@@ -309,14 +309,18 @@ var betAmount = 0;
 
 bet.addEventListener('click', function () {
 	console.log("==bet was clicked");
-	bet.disabled = true;
-	hit.style.visibility = 'visible';
-	stand.style.visibility = 'visible';
-	hidechips();
-	dealCards();
-	updateCards();
-	if (count(player) == 21) {
-		goNext();
+	if (betAmount == 0) {
+		alert("Bet amount cannot be $0");
+	} else {
+		bet.disabled = true;
+		hit.style.visibility = 'visible';
+		stand.style.visibility = 'visible';
+		hidechips();
+		dealCards();
+		updateCards();
+		if (count(player) == 21) {
+			goNext();
+		}
 	}
 });
 
@@ -347,7 +351,7 @@ next.addEventListener('click', function () {
 	clearHands();
 	updateCards();
 	evalChipContainer();
-	chip_container.style.visibility= 'visible';
+	chip_container.style.visibility = 'visible';
 	next.style.visibility = 'hidden';
 	bet.style.visibility = 'visible';
 	bet.disabled = false;
