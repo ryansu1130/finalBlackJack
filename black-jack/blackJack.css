@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
+html{
+  overflow: hidden;
+}
+
 .about-div {
     display: flex;
     flex-direction: row;
@@ -106,7 +110,8 @@
     margin: 25px;
     border-radius: 5px;
 	border-color: #e6a70b;
-	width: 100%;
+  width: 100%;
+  height: 650px;
   }
 
   .table-container img{
@@ -199,4 +204,10 @@
   left: 250px;
   height: 350px;
   width: 450px;
+ }
+
+ #felt-picture{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
  }
