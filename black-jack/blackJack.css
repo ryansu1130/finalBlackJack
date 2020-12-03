@@ -150,6 +150,10 @@ html {
 #bet-button {
   visibility: hidden;
   margin-bottom: 8px;
+  height: 33px;
+  overflow: hidden;
+  width: max-content;
+  max-width: 250px;
 }
 
 #hit-button {
