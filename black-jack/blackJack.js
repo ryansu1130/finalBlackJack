@@ -41,7 +41,7 @@ function dealHand(hand) {
 }
 
 function dealCards() {
-	clearHands()
+	clearHands();
 	if (deck.length < 53)
 		generateDecks();
 	for (let i = 0; i < 2; ++i) {
@@ -288,13 +288,71 @@ logo.addEventListener('click', () => {
 
 
 //background music
-var music = document.getElementById('music-slider');
-var musicVolume = document.getElementById('music');
-music.addEventListener('mousedown', (event) => {
+var musicSlider = document.getElementById('music-slider');
+var musicAudio = document.getElementById('music');
+musicSlider.addEventListener('mousedown', (event) => {
 	if (event.button == 0) {
-		music.addEventListener("mousemove", () => {
-			musicVolume.volume = parseFloat(music.value) / 100;
+		musicSlider.addEventListener("mousemove", () => {
+			musicAudio.volume = parseFloat(musicSlider.value) / 100;
 			event.preventDefault();
 		});
 	}
 });
+
+//overwiting functions of main page
+var previousMusic = .50;
+var previousSFX = .50;
+
+function toCloseModal() //function used to close the modal
+{
+	const openBlackdrop = document.querySelector(".backdrop");
+	const openModal = document.querySelector(".about-us");
+
+
+	openBlackdrop.classList.toggle("hidden")
+	openModal.classList.toggle("hidden")
+
+}
+
+function openSettings() {
+	const openSettings = document.querySelector(".settings-box");
+	openSettings.classList.toggle("hidden");
+}
+
+function closeSettings() {
+	const closeSettings = document.querySelector(".settings-box");
+	musicSlider.value = previousMusic * 100;
+	musicAudio.volume = previousMusic;
+	closeSettings.classList.toggle("hidden");
+}
+
+function saveSettings() {
+	const saveSettings = document.querySelector(".settings-box");
+	previousMusic = musicSlider.value / 100;
+	document.getElementById("SFX-slider").value = previousSFX * 100;//not implemented yet since we dont have an array of SFX yet
+
+	console.log(" === musicValue saveSettings:" + previousMusic);
+	console.log(" === musicValue saveSettings:" + previousSFX);
+	saveSettings.classList.toggle("hidden");
+}
+
+//open modal
+let aboutUsOpenModal = document.querySelector("#nav-button-about");
+aboutUsOpenModal.addEventListener("click", toCloseModal);
+
+//close modal by X
+let closeModalByIcon = document.getElementById("X");
+closeModalByIcon.addEventListener("click", toCloseModal);
+
+//close modal by button(close)
+let closeModalByButton = document.getElementById("close");
+closeModalByButton.addEventListener("click", toCloseModal);
+
+let settingsOpenModal = document.querySelector("#nav-button-settings");
+settingsOpenModal.addEventListener("click", openSettings);
+
+let settingsCloseModal = document.querySelector("#closeSettings");
+settingsCloseModal.addEventListener("click", closeSettings);
+
+let settingsSaveModal = document.querySelector("#saveSettings");
+settingsSaveModal.addEventListener("click", saveSettings);
