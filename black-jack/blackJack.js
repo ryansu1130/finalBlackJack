@@ -50,11 +50,6 @@ function dealCards() {
 	}
 }
 
-function init() {
-	generateDecks(6);
-	dealCards();
-}
-
 function count(hand) {
 	if (!hand) {
 		console.log(" == count(hand) faulted with invalid argument");
@@ -114,10 +109,27 @@ function dealerBot() {
 	while (count(dealer) < 21 && compHand(player, dealer) == -1) {
 		dealHand(dealer);
 	}
+	updateCards();
+}
+
+function evaluateWin(){
+	switch (compHand(player, dealer)) {
+		case 1:
+			// balance -= betAmount;
+			alert("Dealer won $" + betAmount);
+			break;
+		case -1:
+			balance += betAmount * 2;
+			alert("You've won $" + betAmount);
+			break;
+		default:
+			balance += betAmount
+			alert("Tied Hands!");
+
+	}
 }
 
 /******************************** deck functions ******************************************
- * init()					- adds 6 decks and deal cards()
  * dealCards()				- clear hands then deal cards to player and dealer
  * dealHand(hand)				- deal 1 card to selected hand
  * count(hand)				- returns total count of hand
@@ -133,11 +145,52 @@ function updateBetAmount() {
 	document.querySelector('#bet-amount').textContent = '$' + betAmount;
 }
 
+function updateCards() {
+	document.querySelector('#dealer-cards').textContent = dealer;
+	document.querySelector('#player-cards').textContent = player;
+}
 
+function resetBet() {
+	betAmount = 0;
+	updateBetAmount();
+}
 
+function goNext() {
+	evaluateWin();
+	updateBalance();
+	next.style.visibility = 'visible';
+	resetBet();
+	bet.style.visibility = 'hidden';
+	hit.style.visibility = 'hidden';
+	stand.style.visibility = 'hidden';
+}
 
-
-
+function evalChipContainer() {
+	chip5.style.visibility = 'hidden';
+	chip10.style.visibility = 'hidden';
+	chip50.style.visibility = 'hidden';
+	chip100.style.visibility = 'hidden';
+	chip500.style.visibility = 'hidden';
+	chip1000.style.visibility = 'hidden';
+	if(balance >= 5){
+		chip5.style.visibility = 'visible';
+	}
+	if(balance >= 10){
+		chip10.style.visibility = 'visible';
+	}
+	if(balance >= 50){
+		chip50.style.visibility = 'visible';
+	}
+	if(balance >= 100){
+		chip100.style.visibility = 'visible';
+	}
+	if(balance >= 500){
+		chip500.style.visibility = 'visible';
+	}
+	if(balance >= 1000){
+		chip1000.style.visibility = 'visible';
+	}
+}
 
 
 
@@ -166,6 +219,7 @@ chip5.addEventListener('click', function () {
 	else
 		alert("Insufficient balance to bet " + 5);
 	console.log("==chip5 was clicked");
+	evalChipContainer();
 });
 
 chip10.addEventListener('click', function () {
@@ -178,6 +232,7 @@ chip10.addEventListener('click', function () {
 	else
 		alert("Insufficient balance to bet " + 10);
 	console.log("==chip10 was clicked");
+	evalChipContainer();
 });
 
 chip50.addEventListener('click', function () {
@@ -190,6 +245,7 @@ chip50.addEventListener('click', function () {
 	else
 		alert("Insufficient balance to bet " + 50);
 	console.log("==chip50 was clicked");
+	evalChipContainer();
 });
 
 chip100.addEventListener('click', function () {
@@ -202,6 +258,7 @@ chip100.addEventListener('click', function () {
 	else
 		alert("Insufficient balance to bet " + 100);
 	console.log("==chip100 was clicked");
+	evalChipContainer();
 });
 
 chip500.addEventListener('click', function () {
@@ -214,6 +271,7 @@ chip500.addEventListener('click', function () {
 	else
 		alert("Insufficient balance to bet " + 500);
 	console.log("==chip500 was clicked");
+	evalChipContainer();
 });
 
 chip1000.addEventListener('click', function () {
@@ -226,6 +284,7 @@ chip1000.addEventListener('click', function () {
 	else
 		alert("Insufficient balance to bet " + 1000);
 	console.log("==chip1000 was clicked");
+	evalChipContainer();
 });
 
 
@@ -243,10 +302,20 @@ bet.addEventListener('click', function () {
 	console.log("==bet was clicked");
 	hit.style.visibility = 'visible';
 	stand.style.visibility = 'visible';
+	dealCards();
+	updateCards();
+	if(count(player) == 21){
+		goNext();
+	}
 });
 
 hit.addEventListener('click', function () {
+	dealHand(player);
+	updateCards();
 	console.log("==hit was clicked");
+	if(count(player) > 21){
+		goNext();
+	}
 });
 
 stand.addEventListener('click', function () {
@@ -255,16 +324,7 @@ stand.addEventListener('click', function () {
 	stand.style.visibility = 'hidden';
 
 	dealerBot();
-	switch (compHand(player, dealer)) {
-		case 1:
-			balance -= betAmount;
-			break;
-		case -1:
-			balance += betAmount;
-	}
-	updateBalance();
-	clearHands();
-	next.style.visibility = 'visible';
+	goNext();
 });
 
 split.addEventListener('click', function () {
@@ -274,9 +334,12 @@ split.addEventListener('click', function () {
 next.addEventListener('click', function () {
 	console.log("==next was clicked");
 	clearHands();
+	updateCards();
+	evalChipContainer()
 	next.style.visibility = 'hidden';
 	hit.style.visibility = 'visible';
 	stand.style.visibility = 'visible';
+	bet.style.visibility = 'visible';
 });
 
 start.addEventListener('click', function () {
@@ -285,7 +348,7 @@ start.addEventListener('click', function () {
 	chip_container.style.visibility = 'visible';
 	start.style.visibility = 'hidden';
 	bet.style.visibility = 'visible';
-	init();
+	generateDecks(6);
 	// }
 });
 

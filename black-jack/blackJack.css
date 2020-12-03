@@ -179,10 +179,10 @@ html {
 #dealer-cards {
   display: block;
   position: absolute;
-  /* color: white;
+  color: white;
   border: 3px solid;
   border-radius: 5px;
-  border-color: #e6a70b; */
+  border-color: #e6a70b;
   right: 50px;
   top: 50px;
   height: 350px;
@@ -192,10 +192,10 @@ html {
 #player-cards {
   display: block;
   position: absolute;
-  /* color: white; 
+  color: white; 
   border: 3px solid; 
   border-radius: 5px; 
-  border-color: #e6a70b; */
+  border-color: #e6a70b;
   bottom: 100px;
   left: 250px;
   height: 350px;
