@@ -3,23 +3,23 @@ var dealer = [];
 var player = [];
 
 
-function clearHands(){
+function clearHands() {
 	dealer = [];
 	player = [];
 }
 
-function addDeck(){
+function addDeck() {
 	suits = ['H', 'D', 'C', 'S'];
-	for(let i = 1; i < 14; ++i){
-		for(let s = 0; s < 4; ++s){
+	for (let i = 1; i < 14; ++i) {
+		for (let s = 0; s < 4; ++s) {
 			deck.push(i + suits[s]);
 		}
 	}
 }
 
-function generateDecks(num){
-	if(num){
-		for(; num > 0; num--){
+function generateDecks(num) {
+	if (num) {
+		for (; num > 0; num--) {
 			addDeck();
 		}
 	}
@@ -27,58 +27,58 @@ function generateDecks(num){
 		addDeck();
 }
 
-function popCard(){
+function popCard() {
 	return deck.splice(Math.floor(Math.random() * deck.length), 1)[0];
 }
 
-function dealHand(hand){
-	if(!hand){
+function dealHand(hand) {
+	if (!hand) {
 		console.log(" == dealHand(hand) faulted with invalid argument");
 	}
-	if(deck.length < 53)
+	if (deck.length < 53)
 		addDeck();
 	hand.push(popCard());
 }
 
-function dealCards(){
+function dealCards() {
 	clearHands()
-	if(deck.length < 53)
+	if (deck.length < 53)
 		generateDecks();
-	for(let i = 0; i < 2; ++i){
+	for (let i = 0; i < 2; ++i) {
 		dealHand(player);
 		dealHand(dealer);
 	}
 }
 
-function init(){
+function init() {
 	generateDecks(6);
 	dealCards();
 }
 
-function count(hand){
-	if(!hand){
+function count(hand) {
+	if (!hand) {
 		console.log(" == count(hand) faulted with invalid argument");
 	}
 	let sum = 0;
-	if(hand.length == 2){
-		if(parseInt(hand[0].slice(0, -1)) == 1 && parseInt(hand[1].slice(0, -1)) >= 10 || 
-			parseInt(hand[0].slice(0, -1)) >= 10 && parseInt(hand[1].slice(0, -1)) == 1){
+	if (hand.length == 2) {
+		if (parseInt(hand[0].slice(0, -1)) == 1 && parseInt(hand[1].slice(0, -1)) >= 10 ||
+			parseInt(hand[0].slice(0, -1)) >= 10 && parseInt(hand[1].slice(0, -1)) == 1) {
 			return 21;
 		}
 	}
-	for(let i = 0; i < hand.length; ++i){
+	for (let i = 0; i < hand.length; ++i) {
 		let n = parseInt(hand[i].slice(0, -1));
-		if( n > 10){
+		if (n > 10) {
 			sum += 10;
 		}
-		else{
+		else {
 			sum += n;
 		}
 	}
-	for(let i = 0; i < hand.length; ++i){
+	for (let i = 0; i < hand.length; ++i) {
 		let n = parseInt(hand[i].slice(0, -1));
-		if(n == 1){
-			if(sum + 10 <= 21)
+		if (n == 1) {
+			if (sum + 10 <= 21)
 				sum += 10;
 			else
 				break;
@@ -87,32 +87,32 @@ function count(hand){
 	return sum;
 }
 
-function compHand(player, dealer){
-	if(!player || !dealer){
+function compHand(player, dealer) {
+	if (!player || !dealer) {
 		console.log(" == compHand(player, dealer) faulted with invalid argument(s)");
 	}
 	let playerPoints = count(player);
 	let dealerPoints = count(dealer);
-	if(playerPoints > 21){
+	if (playerPoints > 21) {
 		return 1;
 	}
-	if(dealerPoints > 21){
+	if (dealerPoints > 21) {
 		return -1;
 	}
-	if(playerPoints == dealerPoints){
+	if (playerPoints == dealerPoints) {
 		return 0;
 	}
-	if(playerPoints > dealerPoints){
+	if (playerPoints > dealerPoints) {
 		return -1;
 	}
-	if(playerPoints < dealerPoints){
+	if (playerPoints < dealerPoints) {
 		return 1;
 	}
 }
 
-function dealerBot(){
-	while(count(dealer) < 21 && compHand(player, dealer) == -1){
-			dealHand(dealer);
+function dealerBot() {
+	while (count(dealer) < 21 && compHand(player, dealer) == -1) {
+		dealHand(dealer);
 	}
 }
 
@@ -125,11 +125,11 @@ function dealerBot(){
  * compHand(player, dealer)	- return -1, 0, 1 as player win, tie, dealer win respectively
  *****************************************************************************************/
 
-function updateBalance(){
+function updateBalance() {
 	document.querySelector('#balance').textContent = '$' + balance;
 }
 
-function updateBetAmount(){
+function updateBetAmount() {
 	document.querySelector('#bet-amount').textContent = '$' + betAmount;
 }
 
@@ -141,9 +141,9 @@ function updateBetAmount(){
 
 
 
- /**********************************************************************
-  * EVENT LISTENERS 
-  **********************************************************************/
+/**********************************************************************
+ * EVENT LISTENERS 
+ **********************************************************************/
 
 
 
@@ -156,8 +156,8 @@ var chip1000 = document.getElementById('1000');
 var chip_container = document.getElementById('chip-container');
 
 
-chip5.addEventListener('click', function(){
-	if(balance >= 5){
+chip5.addEventListener('click', function () {
+	if (balance >= 5) {
 		balance -= 5;
 		betAmount += 5;
 		updateBalance();
@@ -168,8 +168,8 @@ chip5.addEventListener('click', function(){
 	console.log("==chip5 was clicked");
 });
 
-chip10.addEventListener('click', function(){
-	if(balance >= 10){
+chip10.addEventListener('click', function () {
+	if (balance >= 10) {
 		balance -= 10;
 		betAmount += 10;
 		updateBalance();
@@ -180,8 +180,8 @@ chip10.addEventListener('click', function(){
 	console.log("==chip10 was clicked");
 });
 
-chip50.addEventListener('click', function(){
-	if(balance >= 50){
+chip50.addEventListener('click', function () {
+	if (balance >= 50) {
 		balance -= 50;
 		betAmount += 50;
 		updateBalance();
@@ -192,8 +192,8 @@ chip50.addEventListener('click', function(){
 	console.log("==chip50 was clicked");
 });
 
-chip100.addEventListener('click', function(){
-	if(balance >= 100){
+chip100.addEventListener('click', function () {
+	if (balance >= 100) {
 		balance -= 100;
 		betAmount += 100;
 		updateBalance();
@@ -204,8 +204,8 @@ chip100.addEventListener('click', function(){
 	console.log("==chip100 was clicked");
 });
 
-chip500.addEventListener('click', function(){
-	if(balance >= 500){
+chip500.addEventListener('click', function () {
+	if (balance >= 500) {
 		balance -= 500;
 		betAmount += 500;
 		updateBalance();
@@ -216,8 +216,8 @@ chip500.addEventListener('click', function(){
 	console.log("==chip500 was clicked");
 });
 
-chip1000.addEventListener('click', function(){
-	if(balance >= 1000){
+chip1000.addEventListener('click', function () {
+	if (balance >= 1000) {
 		balance -= 1000;
 		betAmount += 1000;
 		updateBalance();
@@ -239,18 +239,18 @@ var next = document.getElementById('next-hand-button');
 var balance = parseInt(document.querySelector('#balance').textContent.slice(1));
 var betAmount = 0;
 
-bet.addEventListener('click', function(){
+bet.addEventListener('click', function () {
 	console.log("==bet was clicked");
 });
 
-hit.addEventListener('click', function(){
+hit.addEventListener('click', function () {
 	console.log("==hit was clicked");
 });
 
-stand.addEventListener('click', function(){
+stand.addEventListener('click', function () {
 	console.log("==stand was clicked");
 	dealerBot();
-	switch(compHand(player, dealer)){
+	switch (compHand(player, dealer)) {
 		case 1:
 			balance -= betAmount;
 			break;
@@ -261,16 +261,16 @@ stand.addEventListener('click', function(){
 	//call next??????????????????????????????????
 });
 
-split.addEventListener('click', function(){
+split.addEventListener('click', function () {
 	console.log("==split was clicked");
 });
 
-next.addEventListener('click', function(){
+next.addEventListener('click', function () {
 	console.log("==next was clicked");
 	clearHands();
 });
 
-start.addEventListener('click', function(){
+start.addEventListener('click', function () {
 	console.log("==start was clicked");
 	// if (chip_container.style.visibility == 'hidden'){
 	chip_container.style.visibility = 'visible';
@@ -282,6 +282,19 @@ start.addEventListener('click', function(){
 
 // logo to mainpage
 var logo = document.getElementById('logo');
-logo.addEventListener('click', ()=>{
+logo.addEventListener('click', () => {
 	window.location = '../webdev/frontPage.html';
+});
+
+
+//background music
+var music = document.getElementById('music-slider');
+var musicVolume = document.getElementById('music');
+music.addEventListener('mousedown', (event) => {
+	if (event.button == 0) {
+		music.addEventListener("mousemove", () => {
+			musicVolume.volume = parseFloat(music.value) / 100;
+			event.preventDefault();
+		});
+	}
 });
