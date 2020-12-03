@@ -112,7 +112,7 @@ function dealerBot() {
 	updateCards();
 }
 
-function evaluateWin(){
+function evaluateWin() {
 	switch (compHand(player, dealer)) {
 		case 1:
 			// balance -= betAmount;
@@ -172,22 +172,22 @@ function evalChipContainer() {
 	chip100.style.visibility = 'hidden';
 	chip500.style.visibility = 'hidden';
 	chip1000.style.visibility = 'hidden';
-	if(balance >= 5){
+	if (balance >= 5) {
 		chip5.style.visibility = 'visible';
 	}
-	if(balance >= 10){
+	if (balance >= 10) {
 		chip10.style.visibility = 'visible';
 	}
-	if(balance >= 50){
+	if (balance >= 50) {
 		chip50.style.visibility = 'visible';
 	}
-	if(balance >= 100){
+	if (balance >= 100) {
 		chip100.style.visibility = 'visible';
 	}
-	if(balance >= 500){
+	if (balance >= 500) {
 		chip500.style.visibility = 'visible';
 	}
-	if(balance >= 1000){
+	if (balance >= 1000) {
 		chip1000.style.visibility = 'visible';
 	}
 }
@@ -208,6 +208,15 @@ var chip500 = document.getElementById('500');
 var chip1000 = document.getElementById('1000');
 var chip_container = document.getElementById('chip-container');
 
+function hidechips(){
+	chip_container.style.visibility = 'hidden';
+	chip5.style.visibility = 'hidden';
+	chip10.style.visibility = 'hidden';
+	chip50.style.visibility = 'hidden';
+	chip100.style.visibility = 'hidden';
+	chip500.style.visibility = 'hidden';
+	chip1000.style.visibility = 'hidden';
+}
 
 chip5.addEventListener('click', function () {
 	if (balance >= 5) {
@@ -300,11 +309,13 @@ var betAmount = 0;
 
 bet.addEventListener('click', function () {
 	console.log("==bet was clicked");
+	bet.disabled = true;
 	hit.style.visibility = 'visible';
 	stand.style.visibility = 'visible';
+	hidechips();
 	dealCards();
 	updateCards();
-	if(count(player) == 21){
+	if (count(player) == 21) {
 		goNext();
 	}
 });
@@ -313,7 +324,7 @@ hit.addEventListener('click', function () {
 	dealHand(player);
 	updateCards();
 	console.log("==hit was clicked");
-	if(count(player) > 21){
+	if (count(player) > 21) {
 		goNext();
 	}
 });
@@ -335,11 +346,11 @@ next.addEventListener('click', function () {
 	console.log("==next was clicked");
 	clearHands();
 	updateCards();
-	evalChipContainer()
+	evalChipContainer();
+	chip_container.style.visibility= 'visible';
 	next.style.visibility = 'hidden';
-	hit.style.visibility = 'visible';
-	stand.style.visibility = 'visible';
 	bet.style.visibility = 'visible';
+	bet.disabled = false;
 });
 
 start.addEventListener('click', function () {
