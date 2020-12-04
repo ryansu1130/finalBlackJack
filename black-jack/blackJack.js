@@ -450,3 +450,11 @@ settingsCloseModal.addEventListener("click", closeSettings);
 
 let settingsSaveModal = document.querySelector("#saveSettings");
 settingsSaveModal.addEventListener("click", saveSettings);
+
+
+
+
+
+var errrorModal = document.getElementById('error modal');
+
+
