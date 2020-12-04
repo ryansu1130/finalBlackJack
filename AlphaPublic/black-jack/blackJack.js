@@ -372,7 +372,7 @@ hit.addEventListener('click', function () {
 	dealHand(player);
 	updateCards();
 	console.log("==hit was clicked");
-	if (count(player) >= 21) {
+	if (count(player) >= 1000) {
 		dealerBot();
 		goNext();
 	}
@@ -556,3 +556,12 @@ settingsCloseModal.addEventListener("click", closeSettings);
 
 let settingsSaveModal = document.querySelector("#saveSettings");
 settingsSaveModal.addEventListener("click", saveSettings);
+
+
+
+
+
+/**********************************************************************
+ * Card Animations
+ **********************************************************************/
+

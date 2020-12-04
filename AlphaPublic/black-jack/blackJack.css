@@ -214,7 +214,7 @@ html {
 .card{
   max-width: 100px;
   max-height: 200px;
-  margin: 10px;
+  margin: -25px;
 }
 
 .card img{
