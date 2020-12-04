@@ -154,7 +154,6 @@ html {
   overflow: hidden;
   width: max-content;
   max-width: 250px;
-  z-index: +1;
 }
 
 #hit-button {

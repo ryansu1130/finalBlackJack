@@ -355,13 +355,6 @@ next.addEventListener('click', function () {
 	next.style.visibility = 'hidden';
 	bet.style.visibility = 'visible';
 	bet.disabled = false;
-
-	if (balance == 0){
-		alert("You do not have enough credits to play! Here is 5000 more on the house.");
-		balance += 5000;
-		updateBalance();
-		evalChipContainer();
-	}
 });
 
 start.addEventListener('click', function () {
@@ -450,11 +443,3 @@ settingsCloseModal.addEventListener("click", closeSettings);
 
 let settingsSaveModal = document.querySelector("#saveSettings");
 settingsSaveModal.addEventListener("click", saveSettings);
-
-
-
-
-
-var errrorModal = document.getElementById('error modal');
-
-

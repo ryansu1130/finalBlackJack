@@ -1,0 +1,31 @@
+{
+  "name": "final-project-team-8-master",
+  "version": "1.0.0",
+  "description": "A website that allow the user to play blackjack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "prestart": "nodemon server.js",
+    "predev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-f20/final-project-team-8.git"
+  },
+  "author": "Lyon Kee, Yu Wei Koh, Samuel Tran, Ryan Su",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-f20/final-project-team-8/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-f20/final-project-team-8#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "handlebars": "^4.7.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
