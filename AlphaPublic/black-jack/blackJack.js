@@ -32,6 +32,7 @@ function popCard() {
 }
 
 function dealHand(hand) {
+	dealcardsMusic();
 	if (!hand) {
 		console.log(" == dealHand(hand) faulted with invalid argument");
 	}
@@ -45,6 +46,7 @@ function dealCards() {
 	if (deck.length < 53)
 		generateDecks();
 	for (let i = 0; i < 2; ++i) {
+		dealcardsMusic();
 		dealHand(player);
 		dealHand(dealer);
 	}
@@ -115,7 +117,7 @@ function dealerBot() {
 function evaluateWin() {
 	switch (compHand(player, dealer)) {
 		case 1:
-			// balance -= betAmount;
+			loseMusic();
 			customAlert("Dealer won $" + betAmount);
 			break;
 		case -1:
@@ -228,6 +230,7 @@ function hidechips() {
 
 chip5.addEventListener('click', function () {
 	if (balance >= 5) {
+		pokerchipsMusic()
 		balance -= 5;
 		betAmount += 5;
 		updateBalance();
@@ -241,6 +244,7 @@ chip5.addEventListener('click', function () {
 
 chip10.addEventListener('click', function () {
 	if (balance >= 10) {
+		pokerchipsMusic()
 		balance -= 10;
 		betAmount += 10;
 		updateBalance();
@@ -254,6 +258,7 @@ chip10.addEventListener('click', function () {
 
 chip50.addEventListener('click', function () {
 	if (balance >= 50) {
+		pokerchipsMusic()
 		balance -= 50;
 		betAmount += 50;
 		updateBalance();
@@ -267,6 +272,7 @@ chip50.addEventListener('click', function () {
 
 chip100.addEventListener('click', function () {
 	if (balance >= 100) {
+		pokerchipsMusic()
 		balance -= 100;
 		betAmount += 100;
 		updateBalance();
@@ -280,6 +286,7 @@ chip100.addEventListener('click', function () {
 
 chip500.addEventListener('click', function () {
 	if (balance >= 500) {
+		pokerchipsMusic()
 		balance -= 500;
 		betAmount += 500;
 		updateBalance();
@@ -293,6 +300,7 @@ chip500.addEventListener('click', function () {
 
 chip1000.addEventListener('click', function () {
 	if (balance >= 1000) {
+		pokerchipsMusic()
 		balance -= 1000;
 		betAmount += 1000;
 		updateBalance();
@@ -316,6 +324,7 @@ var balance = parseInt(document.querySelector('#balance').textContent.slice(1));
 var betAmount = 0;
 
 bet.addEventListener('click', function () {
+	buttonclickMusic();
 	console.log("==bet was clicked");
 	if (betAmount == 0) {
 		customAlert("Bet amount cannot be $0");
@@ -333,6 +342,7 @@ bet.addEventListener('click', function () {
 });
 
 hit.addEventListener('click', function () {
+	buttonclickMusic();
 	dealHand(player);
 	updateCards();
 	console.log("==hit was clicked");
@@ -342,6 +352,7 @@ hit.addEventListener('click', function () {
 });
 
 stand.addEventListener('click', function () {
+	buttonclickMusic();
 	console.log("==stand was clicked");
 	hit.style.visibility = 'hidden';
 	stand.style.visibility = 'hidden';
@@ -355,6 +366,7 @@ split.addEventListener('click', function () {
 });
 
 next.addEventListener('click', function () {
+	buttonclickMusic();
 	console.log("==next was clicked");
 	clearHands();
 	updateCards();
@@ -366,6 +378,7 @@ next.addEventListener('click', function () {
 });
 
 start.addEventListener('click', function () {
+	buttonclickMusic();
 	console.log("==start was clicked");
 	// if (chip_container.style.visibility == 'hidden'){
 	chip_container.style.visibility = 'visible';
@@ -377,6 +390,7 @@ start.addEventListener('click', function () {
 
 function closeAlert() //function used to close the modal
 {
+	buttonclickMusic();
 	const openBlackdrop = document.querySelector(".backdrop");
 	const alertContainer = document.querySelector("#alert");
 
@@ -392,20 +406,55 @@ closeAlertByIcon.addEventListener("click", closeAlert);
 // logo to mainpage
 var logo = document.getElementById('logo');
 logo.addEventListener('click', () => {
-	window.location = '../webdev/frontPage.html';
+	window.location = '/';
 });
+
+
+//All sounds Effects
+function buttonclickMusic(){
+	document.getElementById('buttonclickMusic').volume = SFXVolume;
+	document.getElementById('buttonclickMusic').currentTime=0;
+	document.getElementById('buttonclickMusic').play();
+}
+
+function dealcardsMusic(){
+	document.getElementById('dealcardsMusic').volume = SFXVolume;
+	document.getElementById('dealcardsMusic').currentTime=0;
+	document.getElementById('dealcardsMusic').play();
+}
+
+function loseMusic(){
+	document.getElementById('loseMusic').volume = SFXVolume;
+	document.getElementById('loseMusic').currentTime=0;
+	document.getElementById('loseMusic').play();
+}
+
+function pokerchipsMusic(){
+	document.getElementById('pokerchipsMusic').volume = SFXVolume;
+	document.getElementById('pokerchipsMusic').currentTime=0;
+	document.getElementById('pokerchipsMusic').play();
+}
 
 
 //background music
 var musicSlider = document.getElementById('music-slider');
-var musicAudio = document.getElementById('music');
+var musicAudio = document.getElementById('elevatorMusic');
 musicSlider.addEventListener('mousedown', (event) => {
+	buttonclickMusic();
 	if (event.button == 0) {
 		musicSlider.addEventListener("mousemove", () => {
 			musicAudio.volume = parseFloat(musicSlider.value) / 100;
 			event.preventDefault();
 		});
 	}
+});
+//SFX
+var SFXSlider = document.getElementById('SFX-slider');
+var SFXVolume = 0.5;
+SFXSlider.addEventListener('click', (event) => {
+	SFXVolume = parseFloat(SFXSlider.value) / 100;
+	event.preventDefault();
+	buttonclickMusic();
 });
 
 
@@ -415,6 +464,7 @@ var previousSFX = .50;
 
 function toCloseModal() //function used to close the modal
 {
+	buttonclickMusic();
 	const openBlackdrop = document.querySelector(".backdrop");
 	const openModal = document.querySelector(".about-us");
 
@@ -425,21 +475,27 @@ function toCloseModal() //function used to close the modal
 }
 
 function openSettings() {
+	buttonclickMusic();
 	const openSettings = document.querySelector(".settings-box");
 	openSettings.classList.toggle("hidden");
 }
 
 function closeSettings() {
+	buttonclickMusic();
 	const closeSettings = document.querySelector(".settings-box");
 	musicSlider.value = previousMusic * 100;
 	musicAudio.volume = previousMusic;
+	SFXSlider.value = previousSFX * 100;
+	SFXVolume = previousSFX;
 	closeSettings.classList.toggle("hidden");
 }
 
 function saveSettings() {
+	buttonclickMusic();
 	const saveSettings = document.querySelector(".settings-box");
 	previousMusic = musicSlider.value / 100;
-	document.getElementById("SFX-slider").value = previousSFX * 100;//not implemented yet since we dont have an array of SFX yet
+	previousSFX = SFXSlider.value / 100;
+
 
 	console.log(" === musicValue saveSettings:" + previousMusic);
 	console.log(" === musicValue saveSettings:" + previousSFX);
