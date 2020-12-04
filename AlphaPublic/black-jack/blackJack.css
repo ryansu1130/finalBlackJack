@@ -214,15 +214,15 @@ html {
 	border-radius: 5%;
 	z-index: 1010;
 	position: absolute;
-	top: 30%;
-	bottom: 30%;
-	left: 25%;
-	right: 25%;
+	top: 20%;
+	bottom: 40%;
+	left: 30%;
+	right: 30%;
 	padding: 7% 5.5% 2%;
 	margin: 0;
 	overflow: hidden;
 	min-width: 380px;
-	min-height: 420px;
+	min-height: 320px;
 	font-weight: lighter;
 }
 
@@ -230,8 +230,8 @@ html {
 	position: fixed;
 	height: 50px;
 	width: 50px;
-	right: 27%;
-	top: 33%;
+	right: 32%;
+	top: 23%;
 	background-color: #e3a712;
 	font-weight: bolder;
 	border-radius: 50%;
@@ -242,6 +242,7 @@ html {
 #alert>p{
   font-size: 18px;
   font-weight: 700;
+  text-align: center;
   word-wrap: break-word;
   height: 100%;
   overflow: auto;

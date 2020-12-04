@@ -116,15 +116,15 @@ function evaluateWin() {
 	switch (compHand(player, dealer)) {
 		case 1:
 			// balance -= betAmount;
-			alert("Dealer won $" + betAmount);
+			customAlert("Dealer won $" + betAmount);
 			break;
 		case -1:
 			balance += betAmount * 2;
-			alert("You've won $" + betAmount);
+			customAlert("You've won $" + betAmount);
 			break;
 		default:
 			balance += betAmount
-			alert("Tied Hands!");
+			customAlert("Tied Hands!");
 
 	}
 }
@@ -234,7 +234,7 @@ chip5.addEventListener('click', function () {
 		updateBetAmount();
 	}
 	else
-		alert("Insufficient balance to bet " + 5);
+		customAlert("Insufficient balance to bet " + 5);
 	console.log("==chip5 was clicked");
 	evalChipContainer();
 });
@@ -247,7 +247,7 @@ chip10.addEventListener('click', function () {
 		updateBetAmount();
 	}
 	else
-		alert("Insufficient balance to bet " + 10);
+		customAlert("Insufficient balance to bet " + 10);
 	console.log("==chip10 was clicked");
 	evalChipContainer();
 });
@@ -260,7 +260,7 @@ chip50.addEventListener('click', function () {
 		updateBetAmount();
 	}
 	else
-		alert("Insufficient balance to bet " + 50);
+		customAlert("Insufficient balance to bet " + 50);
 	console.log("==chip50 was clicked");
 	evalChipContainer();
 });
@@ -273,7 +273,7 @@ chip100.addEventListener('click', function () {
 		updateBetAmount();
 	}
 	else
-		alert("Insufficient balance to bet " + 100);
+		customAlert("Insufficient balance to bet " + 100);
 	console.log("==chip100 was clicked");
 	evalChipContainer();
 });
@@ -286,7 +286,7 @@ chip500.addEventListener('click', function () {
 		updateBetAmount();
 	}
 	else
-		alert("Insufficient balance to bet " + 500);
+		customAlert("Insufficient balance to bet " + 500);
 	console.log("==chip500 was clicked");
 	evalChipContainer();
 });
@@ -299,7 +299,7 @@ chip1000.addEventListener('click', function () {
 		updateBetAmount();
 	}
 	else
-		alert("Insufficient balance to bet " + 1000);
+		customAlert("Insufficient balance to bet " + 1000);
 	console.log("==chip1000 was clicked");
 	evalChipContainer();
 });
@@ -318,7 +318,7 @@ var betAmount = 0;
 bet.addEventListener('click', function () {
 	console.log("==bet was clicked");
 	if (betAmount == 0) {
-		alert("Bet amount cannot be $0");
+		customAlert("Bet amount cannot be $0");
 	} else {
 		bet.disabled = true;
 		hit.style.visibility = 'visible';
