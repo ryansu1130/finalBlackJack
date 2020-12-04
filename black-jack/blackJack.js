@@ -192,6 +192,14 @@ function evalChipContainer() {
 	}
 }
 
+function customAlert(message) {
+	const openBlackdrop = document.querySelector(".backdrop");
+	const alertBox = document.querySelector("#alert");
+	document.querySelector("#alert p").textContent = message;
+	alertBox.classList.toggle("hidden");
+	openBlackdrop.classList.toggle("hidden");
+}
+
 
 
 /**********************************************************************
@@ -367,6 +375,20 @@ start.addEventListener('click', function () {
 	// }
 });
 
+function closeAlert() //function used to close the modal
+{
+	const openBlackdrop = document.querySelector(".backdrop");
+	const alertContainer = document.querySelector("#alert");
+
+
+	openBlackdrop.classList.toggle("hidden");
+	alertContainer.classList.toggle("hidden");
+}
+
+let closeAlertByIcon = document.getElementById("alertX");
+closeAlertByIcon.addEventListener("click", closeAlert);
+
+
 // logo to mainpage
 var logo = document.getElementById('logo');
 logo.addEventListener('click', () => {
@@ -386,6 +408,7 @@ musicSlider.addEventListener('mousedown', (event) => {
 	}
 });
 
+
 //overwiting functions of main page
 var previousMusic = .50;
 var previousSFX = .50;
@@ -396,8 +419,8 @@ function toCloseModal() //function used to close the modal
 	const openModal = document.querySelector(".about-us");
 
 
-	openBlackdrop.classList.toggle("hidden")
-	openModal.classList.toggle("hidden")
+	openBlackdrop.classList.toggle("hidden");
+	openModal.classList.toggle("hidden");
 
 }
 
