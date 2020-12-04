@@ -148,8 +148,23 @@ function updateBetAmount() {
 }
 
 function updateCards() {
-	document.querySelector('#dealer-cards').textContent = dealer;
-	document.querySelector('#player-cards').textContent = player;
+	let dealerDiv = document.querySelector('#dealer-cards');
+	while(dealerDiv.childElementCount){
+		dealerDiv.removeChild(dealerDiv.firstChild);
+	}
+	dealer.forEach((element)=>{
+		dealerDiv.appendChild(generateCard(element));
+	});
+	if(dealer[1])
+		dealerDiv.replaceChild(generateCard('backcard'), dealerDiv.children[1]);
+	
+	let playerDiv = document.querySelector('#player-cards');
+	while(playerDiv.childElementCount){
+		playerDiv.removeChild(playerDiv.firstChild);
+	}
+	player.forEach((element)=>{
+		playerDiv.appendChild(generateCard(element));
+	});
 }
 
 function resetBet() {
@@ -158,6 +173,8 @@ function resetBet() {
 }
 
 function goNext() {
+	let dealerDiv = document.querySelector('#dealer-cards');
+	dealerDiv.replaceChild(generateCard(dealer[1]), dealerDiv.childNodes[1]);
 	evaluateWin();
 	updateBalance();
 	next.style.visibility = 'visible';
@@ -202,6 +219,15 @@ function customAlert(message) {
 	openBlackdrop.classList.toggle("hidden");
 }
 
+function generateCard(cardVal){
+	var cardDiv = document.createElement('div');
+	cardDiv.classList = 'card';
+	var cardImg = document.createElement('img');
+	cardImg.src = "cards/" + cardVal + ".png";
+	cardImg.alt = cardVal;
+	cardDiv.appendChild(cardImg);
+	return cardDiv;
+}
 
 
 /**********************************************************************
@@ -346,7 +372,8 @@ hit.addEventListener('click', function () {
 	dealHand(player);
 	updateCards();
 	console.log("==hit was clicked");
-	if (count(player) > 21) {
+	if (count(player) >= 21) {
+		dealerBot();
 		goNext();
 	}
 });
