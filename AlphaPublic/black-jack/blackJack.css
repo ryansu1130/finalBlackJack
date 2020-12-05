@@ -177,6 +177,8 @@ html {
   bottom: 50px;
 }
 
+
+
 #dealer-cards {
   display: block;
   position: absolute;
@@ -192,8 +194,6 @@ html {
   flex-wrap: nowrap;
   justify-content: center;
   overflow: auto;
-
-  
 }
 
 #player-cards {
@@ -243,6 +243,7 @@ html {
   max-width: 100px;
   max-height: 200px;
   margin: -25px;
+  border: 0px;
 
   /* animation: diagonal 2s; */
 
