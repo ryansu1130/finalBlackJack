@@ -131,6 +131,13 @@ function evaluateWin() {
 	}
 }
 
+function generateDummy() {
+	let dummydeck = document.querySelector('#dummy-deck')
+	for (var a =0; a < 52; a++){
+		dummydeck.appendChild(generateCard('backcard'));
+	}
+}
+
 /******************************** deck functions ******************************************
  * dealCards()				- clear hands then deal cards to player and dealer
  * dealHand(hand)				- deal 1 card to selected hand
@@ -227,6 +234,8 @@ function generateCard(cardVal){
 	cardImg.alt = cardVal;
 	cardDiv.appendChild(cardImg);
 	return cardDiv;
+
+	
 }
 
 
@@ -360,7 +369,13 @@ bet.addEventListener('click', function () {
 		stand.style.visibility = 'visible';
 		hidechips();
 		dealCards();
+
+		dealAnimation();
+
 		updateCards();
+
+		
+
 		if (count(player) == 21) {
 			goNext();
 		}
@@ -372,7 +387,7 @@ hit.addEventListener('click', function () {
 	dealHand(player);
 	updateCards();
 	console.log("==hit was clicked");
-	if (count(player) >= 1000) {
+	if (count(player) >= 21) {
 		dealerBot();
 		goNext();
 	}
@@ -419,6 +434,9 @@ start.addEventListener('click', function () {
 	start.style.visibility = 'hidden';
 	bet.style.visibility = 'visible';
 	generateDecks(6);
+
+	generateDummy();
+
 	// }
 });
 
@@ -565,3 +583,26 @@ settingsSaveModal.addEventListener("click", saveSettings);
  * Card Animations
  **********************************************************************/
 
+
+
+
+function dealAnimation() {
+
+	for (var i = 0; i < document.getElementById('player-cards').childNodes.length; i++){
+		var card = document.getElementById('player-cards').childNodes[i];
+		console.log(card);
+
+		// var pos = -300;
+		// var id = setInterval(frame, 5);
+		// function frame(){
+		// 	if(pos ==0){
+		// 		clearInterval(id);
+		// 	} else {
+		// 		card.style.left = pos + "px";
+		// 		// card.style.bottom = pos + "px";
+		// 	}
+		// }
+
+
+	}
+}
