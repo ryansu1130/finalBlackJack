@@ -136,7 +136,7 @@ function generateDummy() {
 	for (var a =0; a <52; a++){
 		dummydeck.appendChild(generateCard('backcard'));
 
-		document.getElementById('dummy-deck').childNodes[a].setAttribute('style', 'left:' + (-0.175*a) + 'px;' + 'bottom:' + (0.15*a) + 'px;' + 'position: absolute;');
+		document.getElementById('dummy-deck').childNodes[a].setAttribute('style', 'left:' + (-0.19*a) + 'px;' + 'bottom:' + (0.15*a) + 'px;' + 'position: absolute;');
 		
 	}
 }
