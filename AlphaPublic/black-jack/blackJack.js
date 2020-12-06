@@ -27,7 +27,7 @@ function generateDecks(num) {
 		addDeck();
 }
 
-function popCard() {
+function popCard() {}
 	return deck.splice(Math.floor(Math.random() * deck.length), 1)[0];
 }
 
@@ -140,6 +140,14 @@ function generateDummy() {
 		
 	}
 }
+
+function sleep(milliseconds) {
+	const date = Date.now();
+	let currentDate = null;
+	do {
+	  currentDate = Date.now();
+	} while (currentDate - date < milliseconds);
+  }
 
 /******************************** deck functions ******************************************
  * dealCards()				- clear hands then deal cards to player and dealer
@@ -591,20 +599,23 @@ settingsSaveModal.addEventListener("click", saveSettings);
 
 function dealAnimation() {
 
-	for (var i = 0; i < document.getElementById('player-cards').childNodes.length; i++){
+	for (var i = 1; i < document.getElementById('player-cards').childNodes.length; i++){
 		var card = document.getElementById('player-cards').childNodes[i];
-		console.log(card);
+		
+		var pos = 550;
+		var id = setInterval(frame , 2);
+		function frame(){
+			if (pos == 0){
+				clearInterval(id);
+			} else {
+				pos--;
+				card.style.top = pos + "px"; 
+      			card.style.left = pos + "px"; 
+			}
 
-		// var pos = -300;
-		// var id = setInterval(frame, 5);
-		// function frame(){
-		// 	if(pos ==0){
-		// 		clearInterval(id);
-		// 	} else {
-		// 		card.style.left = pos + "px";
-		// 		// card.style.bottom = pos + "px";
-		// 	}
-		// }
+
+		}
+	
 
 
 	}
