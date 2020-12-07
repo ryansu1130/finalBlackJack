@@ -1,7 +1,6 @@
 // <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
 // <!-- The following code is develop by Ryan  -->
 // <!-- The following code is for the about us modal pop up and close -->
-
 function toCloseModal() //function used to close the modal
 {
   const openBlackdrop = document.querySelector(".backdrop");
@@ -14,22 +13,26 @@ function toCloseModal() //function used to close the modal
 }
 
 function openSettings() {
+  const openBackdropSettings = document.querySelector(".backdropSettings");
   const openSettings = document.querySelector(".settings-box");
+
   openSettings.classList.toggle("hidden");
+  openBlackdropSettings.classList.toggle("hidden");
 }
 
 function closeSettings() {
   const closeSettings = document.querySelector(".settings-box");
+  document.getElementById("music-slider").value = 50;
+  document.getElementById("SFX-slider").value = 50;
   closeSettings.classList.toggle("hidden");
 }
 
 function saveSettings() {
   const saveSettings = document.querySelector(".settings-box");
+
   var musicValue = document.getElementById("music-slider").value;
   var sfxValue = document.getElementById("SFX-slider").value;
 
-  console.log(" === musicValue saveSettings:" + musicValue);
-  console.log(" === musicValue saveSettings:" + sfxValue);
   saveSettings.classList.toggle("hidden");
 }
 

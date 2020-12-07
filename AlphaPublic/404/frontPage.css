@@ -409,6 +409,11 @@ body {
 	top: 230px;
 }
 
+#fourOfour {
+	max-width: 300px;
+	max-height: 200px;
+}
+
 .ohDeer{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.5rem;

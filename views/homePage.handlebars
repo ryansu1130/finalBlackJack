@@ -15,20 +15,8 @@
 <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
 <!-- The following code is develop by Sam and Ryan  -->
 <!-- The following code is for the the home page -->
-    <header>
-      <div class="about-div">
-        <img src="/webdev/output-onlinepngtools.png" id="logo" alt="" id="logo">
-        <div class="other-buttons">
-        <a href="/rules"><button type="button" class="btn btn-light" id="nav-button">How to Play</button></a>
-        <a href="#"><button type="button" class="btn btn-light" id="nav-button">Settings</button></a>
-        <a href="#"><button type="button" class="btn btn-light" id="nav-button">About Us</button></a>
-        <button type="button" class="btn btn-light" id="nav-button2">Balance: <span> $5000 </span></button></a>
-        </div>
-      </div>
-    </header>
-    <div class="black-bar">
-      <h5> For a limited time, all deposits made to Kaami Co. will be matched and donated to charity! </h5>
-    </div>
+
+    {{>nav}}
 
       <img src="/webdev/background.jpg" id="background-picture" alt="">
 
@@ -39,7 +27,7 @@
         <div class="card-body">
           <h5 class="card-title">Blackjack</h5>
           <p class="card-text">Test your luck against our finest dealers!</p>
-          <a href="../black-jack/blackJack.html" class="btn btn-primary" id="play-now">Play Now</a>
+          <a href="/blackJack" class="btn btn-primary" id="play-now">Play Now</a>
         </div>
 
       </div>
@@ -102,7 +90,7 @@
   		<h2>CREW</h2>
   		<div class="faces">
   			<div class="face">
-  				<img class="devPhoto" src="Ryan.jpg" alt="a dummy profile picture">
+  				<img class="devPhoto" src="/webdev/Ryan.jpg" alt="a dummy profile picture">
   				<h4 class="name" style="color:#e3a712">
   					Ryan Su
   				</h4>
@@ -118,7 +106,7 @@
   			</div>
 
   			<div class="face">
-  				<img class="devPhoto" src="YuWei.jpg" alt="a dummy profile picture">
+  				<img class="devPhoto" src="/webdev/YuWei.jpg" alt="a dummy profile picture">
   				<h4 class="name" style="color:red">
   					Yu Wei Koh
   				</h4>
@@ -128,7 +116,7 @@
   			</div>
 
   			<div class="face">
-  				<img class="devPhoto" src="Sam.jpg" alt="a dummy profile picture">
+  				<img class="devPhoto" src="/webdev/Sam.jpg" alt="a dummy profile picture">
   				<h4 class="name" style="color:#e3a712">
   					Samuel Tran
   				</h4>
@@ -138,7 +126,7 @@
   			</div>
 
   			<div class="face">
-  				<img class="devPhoto" src="Lyon.jpg" alt="a dummy profile picture">
+  				<img class="devPhoto" src="/webdev/Lyon.jpg" alt="a dummy profile picture">
   				<h4 class="name" style="color:#e3a712">
   					Lyon Kee
   				</h4>

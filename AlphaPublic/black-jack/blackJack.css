@@ -94,8 +94,8 @@ html {
 }
 
 #chip-buttons img {
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
   margin-bottom: 10px;
 }
 
@@ -107,7 +107,7 @@ html {
   border-radius: 5px;
   border-color: #e6a70b;
   width: 100%;
-  height: 82vh;
+  height: 78vh;
 }
 
 #start-button {
@@ -173,9 +173,8 @@ html {
   visibility: hidden;
   position: absolute;
   font-size: xx-large;
-  right: -300px;
+  right: -550px;
   bottom: 50px;
-  z-index: +1;
 }
 
 
@@ -231,7 +230,7 @@ html {
   color: transparent;
   /* border: 3px solid;
   border-radius: 5px;*/
-  border-color: transparent; 
+  border-color: transparent;
   bottom: 75px;
   right: 75px;
   z-index: +2;
@@ -245,14 +244,26 @@ html {
   max-height: 200px;
   margin: -25px;
   border: 0px;
-  
+
+  /* animation: diagonal 2s; */
+
 }
+
+/* @-webkit-keyframes diagonal {
+  0%       { transform: translatex(-30px) translatey(-30px) }
+  100%      { transform: translatex(0px) translatey(0px); }
+  /* 100%     { transform: translatex(-30px) translatey(-30px) } */
+/* } */
+
+
 
 .card img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   background-color: transparent;
+
+
 }
 
 #felt-picture {

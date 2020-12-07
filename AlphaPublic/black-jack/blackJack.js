@@ -27,7 +27,7 @@ function generateDecks(num) {
 		addDeck();
 }
 
-function popCard() {}
+function popCard() {
 	return deck.splice(Math.floor(Math.random() * deck.length), 1)[0];
 }
 
@@ -137,17 +137,9 @@ function generateDummy() {
 		dummydeck.appendChild(generateCard('backcard'));
 
 		document.getElementById('dummy-deck').childNodes[a].setAttribute('style', 'left:' + (-0.19*a) + 'px;' + 'bottom:' + (0.15*a) + 'px;' + 'position: absolute;');
-		
+
 	}
 }
-
-function sleep(milliseconds) {
-	const date = Date.now();
-	let currentDate = null;
-	do {
-	  currentDate = Date.now();
-	} while (currentDate - date < milliseconds);
-  }
 
 /******************************** deck functions ******************************************
  * dealCards()				- clear hands then deal cards to player and dealer
@@ -175,7 +167,7 @@ function updateCards() {
 	});
 	if(dealer[1])
 		dealerDiv.replaceChild(generateCard('backcard'), dealerDiv.children[1]);
-	
+
 	let playerDiv = document.querySelector('#player-cards');
 	while(playerDiv.childElementCount){
 		playerDiv.removeChild(playerDiv.firstChild);
@@ -241,17 +233,17 @@ function generateCard(cardVal){
 	var cardDiv = document.createElement('div');
 	cardDiv.classList = 'card';
 	var cardImg = document.createElement('img');
-	cardImg.src = "cards/" + cardVal + ".png";
+	cardImg.src = "/black-jack/cards/" + cardVal + ".png";
 	cardImg.alt = cardVal;
 	cardDiv.appendChild(cardImg);
 	return cardDiv;
 
-	
+
 }
 
 
 /**********************************************************************
- * EVENT LISTENERS 
+ * EVENT LISTENERS
  **********************************************************************/
 
 
@@ -385,7 +377,7 @@ bet.addEventListener('click', function () {
 
 		updateCards();
 
-		
+
 
 		if (count(player) == 21) {
 			goNext();
@@ -599,23 +591,20 @@ settingsSaveModal.addEventListener("click", saveSettings);
 
 function dealAnimation() {
 
-	for (var i = 1; i < document.getElementById('player-cards').childNodes.length; i++){
+	for (var i = 0; i < document.getElementById('player-cards').childNodes.length; i++){
 		var card = document.getElementById('player-cards').childNodes[i];
-		
-		var pos = 550;
-		var id = setInterval(frame , 2);
-		function frame(){
-			if (pos == 0){
-				clearInterval(id);
-			} else {
-				pos--;
-				card.style.top = pos + "px"; 
-      			card.style.left = pos + "px"; 
-			}
+		console.log(card);
 
-
-		}
-	
+		// var pos = -300;
+		// var id = setInterval(frame, 5);
+		// function frame(){
+		// 	if(pos ==0){
+		// 		clearInterval(id);
+		// 	} else {
+		// 		card.style.left = pos + "px";
+		// 		// card.style.bottom = pos + "px";
+		// 	}
+		// }
 
 
 	}
