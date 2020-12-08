@@ -432,6 +432,7 @@ next.addEventListener('click', function () {
 	chip_container.style.visibility = 'visible';
 	next.style.visibility = 'hidden';
 	bet.style.visibility = 'visible';
+	allIn.style.visibility = 'visible';
 	bet.disabled = false;
 
 	if (balance == 0){
