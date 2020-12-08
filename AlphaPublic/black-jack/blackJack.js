@@ -2,7 +2,6 @@ var deck = [];
 var dealer = [];
 var player = [];
 
-
 function clearHands() {
 	dealer = [];
 	player = [];
@@ -127,7 +126,6 @@ function evaluateWin() {
 		default:
 			balance += betAmount
 			customAlert("Tied Hands!");
-
 	}
 }
 
@@ -137,7 +135,6 @@ function generateDummy() {
 		dummydeck.appendChild(generateCard('backcard'));
 
 		document.getElementById('dummy-deck').childNodes[a].setAttribute('style', 'left:' + (-0.19*a) + 'px;' + 'bottom:' + (0.15*a) + 'px;' + 'position: absolute;');
-
 	}
 }
 
@@ -237,8 +234,6 @@ function generateCard(cardVal){
 	cardImg.alt = cardVal;
 	cardDiv.appendChild(cardImg);
 	return cardDiv;
-
-
 }
 
 
@@ -351,7 +346,6 @@ chip1000.addEventListener('click', function () {
 });
 
 
-
 var bet = document.getElementById('bet-button');
 var hit = document.getElementById('hit-button');
 var stand = document.getElementById('stand-button');
@@ -386,11 +380,7 @@ bet.addEventListener('click', function () {
 		hidechips();
 		dealCards();
 
-		dealAnimation();
-
 		updateCards();
-
-
 
 		if (count(player) == 21) {
 			goNext();
@@ -454,8 +444,6 @@ start.addEventListener('click', function () {
 	generateDecks(6);
 
 	generateDummy();
-
-	// }
 });
 
 function closeAlert() //function used to close the modal
@@ -464,14 +452,12 @@ function closeAlert() //function used to close the modal
 	const openBlackdrop = document.querySelector(".backdrop");
 	const alertContainer = document.querySelector("#alert");
 
-
 	openBlackdrop.classList.toggle("hidden");
 	alertContainer.classList.toggle("hidden");
 }
 
 let closeAlertByIcon = document.getElementById("alertX");
 closeAlertByIcon.addEventListener("click", closeAlert);
-
 
 // logo to mainpage
 var logo = document.getElementById('logo');
@@ -505,7 +491,6 @@ function pokerchipsMusic(){
 	document.getElementById('pokerchipsMusic').play();
 }
 
-
 //background music
 var musicSlider = document.getElementById('music-slider');
 var musicAudio = document.getElementById('elevatorMusic');
@@ -518,6 +503,7 @@ musicSlider.addEventListener('mousedown', (event) => {
 		});
 	}
 });
+
 //SFX
 var SFXSlider = document.getElementById('SFX-slider');
 var SFXVolume = 0.5;
@@ -526,7 +512,6 @@ SFXSlider.addEventListener('click', (event) => {
 	event.preventDefault();
 	buttonclickMusic();
 });
-
 
 //overwiting functions of main page
 var previousMusic = .50;
@@ -538,10 +523,8 @@ function toCloseModal() //function used to close the modal
 	const openBlackdrop = document.querySelector(".backdrop");
 	const openModal = document.querySelector(".about-us");
 
-
 	openBlackdrop.classList.toggle("hidden");
 	openModal.classList.toggle("hidden");
-
 }
 
 function openSettings() {
@@ -565,7 +548,6 @@ function saveSettings() {
 	const saveSettings = document.querySelector(".settings-box");
 	previousMusic = musicSlider.value / 100;
 	previousSFX = SFXSlider.value / 100;
-
 
 	console.log(" === musicValue saveSettings:" + previousMusic);
 	console.log(" === musicValue saveSettings:" + previousSFX);
@@ -594,33 +576,22 @@ let settingsSaveModal = document.querySelector("#saveSettings");
 settingsSaveModal.addEventListener("click", saveSettings);
 
 
-
-
-
-/**********************************************************************
- * Card Animations
- **********************************************************************/
-
-
-
-
-function dealAnimation() {
-
-	for (var i = 0; i < document.getElementById('player-cards').childNodes.length; i++){
-		var card = document.getElementById('player-cards').childNodes[i];
-		console.log(card);
-
-		// var pos = -300;
-		// var id = setInterval(frame, 5);
-		// function frame(){
-		// 	if(pos ==0){
-		// 		clearInterval(id);
-		// 	} else {
-		// 		card.style.left = pos + "px";
-		// 		// card.style.bottom = pos + "px";
-		// 	}
-		// }
-
-
-	}
-}
+// /**********************************************************************
+//  * Card Animations
+//  **********************************************************************/
+// function dealAnimation() {
+// 	for (var i = 0; i < document.getElementById('player-cards').childNodes.length; i++){
+// 		var card = document.getElementById('player-cards').childNodes[i];
+// 		console.log(card);
+// 		var pos = -300;
+// 		var id = setInterval(frame, 5);
+// 		function frame(){
+// 			if(pos ==0){
+// 				clearInterval(id);
+// 			} else {
+// 				card.style.left = pos + "px";
+// 				// card.style.bottom = pos + "px";
+// 			}
+// 		}
+// 	}
+// }
