@@ -360,6 +360,18 @@ var start = document.getElementById('start-button');
 var next = document.getElementById('next-hand-button');
 var balance = parseInt(document.querySelector('#balance').textContent.slice(1));
 var betAmount = 0;
+var allIn = document.getElementById('all-in-button');
+
+allIn.addEventListener('click', function () {
+	buttonclickMusic();
+	console.log('==All In clicked');
+	betAmount += balance ;
+	balance = 0 ;
+	allIn.style.visibility = 'hidden';
+	updateBalance();
+	updateBetAmount();
+	evalChipContainer();
+});
 
 bet.addEventListener('click', function () {
 	buttonclickMusic();
@@ -367,6 +379,7 @@ bet.addEventListener('click', function () {
 	if (betAmount == 0) {
 		customAlert("Bet amount cannot be $0");
 	} else {
+		allIn.style.visibility = 'hidden'
 		bet.disabled = true;
 		hit.style.visibility = 'visible';
 		stand.style.visibility = 'visible';
@@ -436,6 +449,7 @@ start.addEventListener('click', function () {
 	chip_container.style.visibility = 'visible';
 	start.style.visibility = 'hidden';
 	bet.style.visibility = 'visible';
+	allIn.style.visibility = 'visible';
 	generateDecks(6);
 
 	generateDummy();

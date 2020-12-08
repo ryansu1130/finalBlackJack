@@ -129,6 +129,10 @@ html {
   font-size: x-large;
 }
 
+#all-in-button {
+  visibility: hidden;
+}
+
 .action-button {
   border-radius: 5px;
   border-color: #e6a70b;
