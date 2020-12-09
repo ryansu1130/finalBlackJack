@@ -73,7 +73,7 @@ integrity with the sense of having something to win. We hope to push updates in 
 personalize each unique user to allow them to operate our website with full control.
 
 
-### Group Work Distribution
+## Group Work Distribution
 
 #### Ryan Su
 
