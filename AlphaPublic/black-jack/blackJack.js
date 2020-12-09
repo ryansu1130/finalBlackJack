@@ -156,6 +156,7 @@ function updateBetAmount() {
 
 function updateCards() {
 	let dealerDiv = document.querySelector('#dealer-cards');
+	let dealerLabel = document.querySelector('#dealer-cards span')
 	while (dealerDiv.childElementCount) {
 		dealerDiv.removeChild(dealerDiv.firstChild);
 	}
@@ -166,12 +167,15 @@ function updateCards() {
 		dealerDiv.replaceChild(generateCard('backcard'), dealerDiv.children[1]);
 
 	let playerDiv = document.querySelector('#player-cards');
+	let playerLabel = document.querySelector('#player-cards span')
 	while (playerDiv.childElementCount) {
 		playerDiv.removeChild(playerDiv.firstChild);
 	}
 	player.forEach((element) => {
 		playerDiv.appendChild(generateCard(element));
 	});
+	dealerDiv.appendChild(dealerLabel);
+	playerDiv.appendChild(playerLabel);
 }
 
 function resetBet() {
