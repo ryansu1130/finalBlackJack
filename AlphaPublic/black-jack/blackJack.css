@@ -175,9 +175,8 @@ html {
 
 #next-hand-button {
   visibility: hidden;
-  position: absolute;
+  position: relative;
   font-size: xx-large;
-  right: -550px;
   bottom: 50px;
 }
 
