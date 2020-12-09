@@ -131,10 +131,10 @@ function evaluateWin() {
 
 function generateDummy() {
 	let dummydeck = document.querySelector('#dummy-deck');
-	for (var a =0; a <52; a++){
+	for (var a = 0; a < 52; a++) {
 		dummydeck.appendChild(generateCard('backcard'));
 
-		document.getElementById('dummy-deck').childNodes[a].setAttribute('style', 'left:' + (-0.19*a) + 'px;' + 'bottom:' + (0.15*a) + 'px;' + 'position: absolute;');
+		document.getElementById('dummy-deck').childNodes[a].setAttribute('style', 'left:' + (-0.19 * a) + 'px;' + 'bottom:' + (0.15 * a) + 'px;' + 'position: absolute;');
 	}
 }
 
@@ -156,20 +156,20 @@ function updateBetAmount() {
 
 function updateCards() {
 	let dealerDiv = document.querySelector('#dealer-cards');
-	while(dealerDiv.childElementCount){
+	while (dealerDiv.childElementCount) {
 		dealerDiv.removeChild(dealerDiv.firstChild);
 	}
-	dealer.forEach((element)=>{
+	dealer.forEach((element) => {
 		dealerDiv.appendChild(generateCard(element));
 	});
-	if(dealer[1])
+	if (dealer[1])
 		dealerDiv.replaceChild(generateCard('backcard'), dealerDiv.children[1]);
 
 	let playerDiv = document.querySelector('#player-cards');
-	while(playerDiv.childElementCount){
+	while (playerDiv.childElementCount) {
 		playerDiv.removeChild(playerDiv.firstChild);
 	}
-	player.forEach((element)=>{
+	player.forEach((element) => {
 		playerDiv.appendChild(generateCard(element));
 	});
 }
@@ -226,7 +226,7 @@ function customAlert(message) {
 	openBlackdrop.classList.toggle("hidden");
 }
 
-function generateCard(cardVal){
+function generateCard(cardVal) {
 	var cardDiv = document.createElement('div');
 	cardDiv.classList = 'card';
 	var cardImg = document.createElement('img');
@@ -359,8 +359,8 @@ var allIn = document.getElementById('all-in-button');
 allIn.addEventListener('click', function () {
 	buttonclickMusic();
 	console.log('==All In clicked');
-	betAmount += balance ;
-	balance = 0 ;
+	betAmount += balance;
+	balance = 0;
 	allIn.style.visibility = 'hidden';
 	updateBalance();
 	updateBetAmount();
@@ -425,7 +425,7 @@ next.addEventListener('click', function () {
 	allIn.style.visibility = 'visible';
 	bet.disabled = false;
 
-	if (balance == 0){
+	if (balance == 0) {
 		customAlert("You ran out of money! Here is $5000 more, on the house");
 		balance += 5000;
 		updateBalance();
@@ -467,114 +467,29 @@ logo.addEventListener('click', () => {
 
 
 //All sounds Effects
-function buttonclickMusic(){
+function buttonclickMusic() {
 	document.getElementById('buttonclickMusic').volume = SFXVolume;
-	document.getElementById('buttonclickMusic').currentTime=0;
+	document.getElementById('buttonclickMusic').currentTime = 0;
 	document.getElementById('buttonclickMusic').play();
 }
 
-function dealcardsMusic(){
+function dealcardsMusic() {
 	document.getElementById('dealcardsMusic').volume = SFXVolume;
-	document.getElementById('dealcardsMusic').currentTime=0;
+	document.getElementById('dealcardsMusic').currentTime = 0;
 	document.getElementById('dealcardsMusic').play();
 }
 
-function loseMusic(){
+function loseMusic() {
 	document.getElementById('loseMusic').volume = SFXVolume;
-	document.getElementById('loseMusic').currentTime=0;
+	document.getElementById('loseMusic').currentTime = 0;
 	document.getElementById('loseMusic').play();
 }
 
-function pokerchipsMusic(){
+function pokerchipsMusic() {
 	document.getElementById('pokerchipsMusic').volume = SFXVolume;
-	document.getElementById('pokerchipsMusic').currentTime=0;
+	document.getElementById('pokerchipsMusic').currentTime = 0;
 	document.getElementById('pokerchipsMusic').play();
 }
-
-//background music
-var musicSlider = document.getElementById('music-slider');
-var musicAudio = document.getElementById('elevatorMusic');
-musicSlider.addEventListener('mousedown', (event) => {
-	buttonclickMusic();
-	if (event.button == 0) {
-		musicSlider.addEventListener("mousemove", () => {
-			musicAudio.volume = parseFloat(musicSlider.value) / 100;
-			event.preventDefault();
-		});
-	}
-});
-
-//SFX
-var SFXSlider = document.getElementById('SFX-slider');
-var SFXVolume = 0.5;
-SFXSlider.addEventListener('click', (event) => {
-	SFXVolume = parseFloat(SFXSlider.value) / 100;
-	event.preventDefault();
-	buttonclickMusic();
-});
-
-//overwiting functions of main page
-var previousMusic = .50;
-var previousSFX = .50;
-
-function toCloseModal() //function used to close the modal
-{
-	buttonclickMusic();
-	const openBlackdrop = document.querySelector(".backdrop");
-	const openModal = document.querySelector(".about-us");
-
-	openBlackdrop.classList.toggle("hidden");
-	openModal.classList.toggle("hidden");
-}
-
-function openSettings() {
-	buttonclickMusic();
-	const openSettings = document.querySelector(".settings-box");
-	openSettings.classList.toggle("hidden");
-}
-
-function closeSettings() {
-	buttonclickMusic();
-	const closeSettings = document.querySelector(".settings-box");
-	musicSlider.value = previousMusic * 100;
-	musicAudio.volume = previousMusic;
-	SFXSlider.value = previousSFX * 100;
-	SFXVolume = previousSFX;
-	closeSettings.classList.toggle("hidden");
-}
-
-function saveSettings() {
-	buttonclickMusic();
-	const saveSettings = document.querySelector(".settings-box");
-	previousMusic = musicSlider.value / 100;
-	previousSFX = SFXSlider.value / 100;
-
-	console.log(" === musicValue saveSettings:" + previousMusic);
-	console.log(" === musicValue saveSettings:" + previousSFX);
-	saveSettings.classList.toggle("hidden");
-}
-
-//open modal
-let aboutUsOpenModal = document.querySelector("#nav-button-about");
-aboutUsOpenModal.addEventListener("click", toCloseModal);
-
-//close modal by X
-let closeModalByIcon = document.getElementById("X");
-closeModalByIcon.addEventListener("click", toCloseModal);
-
-//close modal by button(close)
-let closeModalByButton = document.getElementById("close");
-closeModalByButton.addEventListener("click", toCloseModal);
-
-let settingsOpenModal = document.querySelector("#nav-button-settings");
-settingsOpenModal.addEventListener("click", openSettings);
-
-let settingsCloseModal = document.querySelector("#closeSettings");
-settingsCloseModal.addEventListener("click", closeSettings);
-
-let settingsSaveModal = document.querySelector("#saveSettings");
-settingsSaveModal.addEventListener("click", saveSettings);
-
 
 // /**********************************************************************
 //  * Card Animations

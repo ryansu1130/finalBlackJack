@@ -1,8 +1,39 @@
 // <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
 // <!-- The following code is develop by Ryan  -->
+// <!-- The following code is merged by Lyon  -->
 // <!-- The following code is for the about us modal pop up and close -->
+var previousMusic = .50;
+var previousSFX = .50;
+
+//background music
+var musicSlider = document.getElementById('music-slider');
+var musicAudio = document.getElementById('elevatorMusic');
+musicSlider.addEventListener('mousedown', (event) => {
+  buttonclickMusic();
+  if (event.button == 0) {
+    musicSlider.addEventListener("mousemove", () => {
+      musicAudio.volume = parseFloat(musicSlider.value) / 100;
+      event.preventDefault();
+    });
+  }
+});
+
+//SFX
+var SFXSlider = document.getElementById('SFX-slider');
+var SFXVolume = 0.5;
+SFXSlider.addEventListener('click', (event) => {
+  SFXVolume = parseFloat(SFXSlider.value) / 100;
+  event.preventDefault();
+  buttonclickMusic();
+});
+
+function buttonclickMusic(){
+  //unset
+}
+
 function toCloseModal() //function used to close the modal
 {
+	buttonclickMusic();
   const openBlackdrop = document.querySelector(".backdrop");
   const openModal = document.querySelector(".about-us");
 
@@ -13,27 +44,37 @@ function toCloseModal() //function used to close the modal
 }
 
 function openSettings() {
+	buttonclickMusic();
   const openBackdropSettings = document.querySelector(".backdropSettings");
   const openSettings = document.querySelector(".settings-box");
 
   openSettings.classList.toggle("hidden");
-  openBlackdropSettings.classList.toggle("hidden");
+  openBackdropSettings.classList.toggle("hidden");
 }
 
 function closeSettings() {
+	buttonclickMusic();
   const closeSettings = document.querySelector(".settings-box");
-  document.getElementById("music-slider").value = 50;
-  document.getElementById("SFX-slider").value = 50;
+  const openBackdropSettings = document.querySelector(".backdropSettings");
+  musicSlider.value = previousMusic * 100;
+	musicAudio.volume = previousMusic;
+	SFXSlider.value = previousSFX * 100;
+	SFXVolume = previousSFX;
   closeSettings.classList.toggle("hidden");
+  openBackdropSettings.classList.toggle("hidden");
 }
 
 function saveSettings() {
+	buttonclickMusic();
   const saveSettings = document.querySelector(".settings-box");
+  const openBackdropSettings = document.querySelector(".backdropSettings");
+	previousMusic = musicSlider.value / 100;
+	previousSFX = SFXSlider.value / 100;
 
-  var musicValue = document.getElementById("music-slider").value;
-  var sfxValue = document.getElementById("SFX-slider").value;
-
+	console.log(" === musicValue saveSettings:" + previousMusic);
+	console.log(" === musicValue saveSettings:" + previousSFX);
   saveSettings.classList.toggle("hidden");
+  openBackdropSettings.classList.toggle("hidden");
 }
 
 //open modal
