@@ -149,6 +149,7 @@ html {
   left: 150px;
   width: 240px;
   font-size: large;
+  z-index: +3;
 }
 
 #bet-button {
@@ -178,6 +179,7 @@ html {
   position: relative;
   font-size: xx-large;
   bottom: 50px;
+  z-index: +3;
 }
 
 
@@ -221,10 +223,19 @@ html {
   color: #e6a70b;
   bottom: 50px;
 }
+
 #player-cards span {
   position: absolute;
   color: #e6a70b;
   bottom: 50px;
+}
+
+.playerCount {
+  left: 280px;
+}
+
+.dealerCount {
+  left: 280px;
 }
 
 #dummy-deck{
