@@ -96,7 +96,7 @@ modules of the Blackjack page. Yu-Wei was mostly responsible for the functionali
 Blackjack page. He also was responsible for the write-up of our initial team document. He fully
 wrote the “How-to-Play” page, which was later implemented by our developers of the main page.
 
-### Samuel Tran
+#### Samuel Tran
 
 This developer was responsible for the co-development of the HTML, CSS, and Javascript
 modules of the main page. Samuel also took on the role of being in charge of gathering all the
