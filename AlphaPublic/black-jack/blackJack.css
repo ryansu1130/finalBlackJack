@@ -219,12 +219,12 @@ html {
 #dealer-cards span {
   position: absolute;
   color: #e6a70b;
-  bottom: 0px;
+  bottom: 50px;
 }
 #player-cards span {
   position: absolute;
   color: #e6a70b;
-  bottom: 0px;
+  bottom: 50px;
 }
 
 #dummy-deck{
@@ -240,7 +240,6 @@ html {
   width: 94px;
   height: 155px;
 }
-
 
 .card{
   max-width: 100px;
