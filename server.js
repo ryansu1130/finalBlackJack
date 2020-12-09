@@ -34,6 +34,8 @@ app.get('/rules', function (req, res) {
 });
 
 app.get('/blackjack', function (req, res) {
+  if(userData['balance'] == 0)
+    userData['balance'] = 5000;
   res.status(200).render("blackJack",
     {
       logoURL: "/black-jack/output-onlinepngtools.png",

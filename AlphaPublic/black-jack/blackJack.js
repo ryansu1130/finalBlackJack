@@ -196,6 +196,7 @@ function resetBet() {
 }
 
 function goNext() {
+	balanceSync();
 	let dealerDiv = document.querySelector('#dealer-cards');
 	dealerDiv.replaceChild(generateCard(dealer[1]), dealerDiv.childNodes[1]);
 	evaluateWin();
@@ -445,6 +446,7 @@ next.addEventListener('click', function () {
 		customAlert("You ran out of money! Here is $5000 more, on the house");
 		balance += 5000;
 		updateBalance();
+		balanceSync();
 		evalChipContainer();
 	}
 });
