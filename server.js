@@ -46,14 +46,12 @@ app.get('/blackjack', function (req, res) {
 });
 
 app.post('/blackjack/updateBalance', (req, res) => {
-  console.log(' == updated balance on the simulated db');
   userData.balance = req.body.balance;
   fs.writeFile(__dirname + '/balance.json', JSON.stringify(userData, null, 2), (err) => {
     if (err) {
       res.status(400).send('Failed to write balance to file');
     }
   });
-  console.log(' == balance: ' + userData.balance);
   res.status(200).send('Balance updated successfully');
 });
 
