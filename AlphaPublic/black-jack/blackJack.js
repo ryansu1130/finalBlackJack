@@ -187,10 +187,6 @@ function updateCards() {
 		playerDiv.appendChild(generateCard(element));
 	});
 	dealerDiv.appendChild(dealerLabel);
-	let dealerCountSpan = document.createElement('span');
-	dealerCountSpan.textContent = count(dealer);
-	dealerCountSpan.classList = "dealerCount";
-	dealerDiv.appendChild(dealerCountSpan);
 	playerDiv.appendChild(playerLabel);
 	let playerCountSpan = document.createElement('span');
 	playerCountSpan.textContent = count(player);
