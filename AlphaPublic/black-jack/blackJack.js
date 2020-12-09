@@ -107,7 +107,7 @@ function compHand(player, dealer) {
 }
 
 function dealerBot() {
-	while (count(dealer) <17 || count(dealer) < 21 && compHand(player, dealer) == -1) {
+	while (count(dealer) < 17 || count(dealer) < 21 && compHand(player, dealer) == -1) {
 		dealHand(dealer);
 	}
 	updateCards();
@@ -136,6 +136,18 @@ function generateDummy() {
 
 		document.getElementById('dummy-deck').childNodes[a].setAttribute('style', 'left:' + (-0.19 * a) + 'px;' + 'bottom:' + (0.15 * a) + 'px;' + 'position: absolute;');
 	}
+}
+
+function balanceSync() {
+	let balanceRequest = new XMLHttpRequest();
+	let requestBody = JSON.stringify({ "balance": balance });
+	balanceRequest.open('POST', "/blackjack/updateBalance");
+	balanceRequest.setRequestHeader('content-Type', 'application/json');
+	balanceRequest.addEventListener('load', (event) => {
+		if(event.target.status != 200)
+			customAlert("Failed to write to server");
+	})
+	balanceRequest.send(requestBody);
 }
 
 /******************************** deck functions ******************************************
