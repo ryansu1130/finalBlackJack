@@ -1,7 +1,7 @@
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['nav'] = template({"1":function(container,depth0,helpers,partials,data) {
-    var helper, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
         }
@@ -9,8 +9,10 @@ templates['nav'] = template({"1":function(container,depth0,helpers,partials,data
     };
 
   return "    <div class=\"other-buttons\">\n    <a href="
-    + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"rulesURL") || (depth0 != null ? lookupProperty(depth0,"rulesURL") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"rulesURL","hash":{},"data":data,"loc":{"start":{"line":6,"column":12},"end":{"line":6,"column":24}}}) : helper)))
-    + " target=_blank><button type=\"button\" class=\"btn btn-light\" id=\"nav-button-rules\">How to Play</button></a>\n    <a href=\"#\"><button type=\"button\" class=\"btn btn-light\" id=\"nav-button-settings\">Settings</button>\n    <a href=\"#\"><button type=\"button\" class=\"btn btn-light\" id=\"nav-button-about\">About Us</button></a>\n    <button type=\"button\" class=\"btn btn-light\" id=\"nav-button2\">Balance: <span id=\"balance\"> $5000 </span></button></a>\n    </div>\n";
+    + alias4(((helper = (helper = lookupProperty(helpers,"rulesURL") || (depth0 != null ? lookupProperty(depth0,"rulesURL") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"rulesURL","hash":{},"data":data,"loc":{"start":{"line":6,"column":12},"end":{"line":6,"column":24}}}) : helper)))
+    + " target=_blank><button type=\"button\" class=\"btn btn-light\" id=\"nav-button-rules\">How to Play</button></a>\n    <a href=\"#\"><button type=\"button\" class=\"btn btn-light\" id=\"nav-button-settings\">Settings</button>\n    <a href=\"#\"><button type=\"button\" class=\"btn btn-light\" id=\"nav-button-about\">About Us</button></a>\n    <button type=\"button\" class=\"btn btn-light\" id=\"nav-button2\">Balance: <span id=\"balance\"> $"
+    + alias4(((helper = (helper = lookupProperty(helpers,"balance") || (depth0 != null ? lookupProperty(depth0,"balance") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"balance","hash":{},"data":data,"loc":{"start":{"line":9,"column":95},"end":{"line":9,"column":106}}}) : helper)))
+    + " </span></button></a>\n    </div>\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
