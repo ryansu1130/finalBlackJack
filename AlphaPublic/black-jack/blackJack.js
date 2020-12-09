@@ -196,11 +196,11 @@ function resetBet() {
 }
 
 function goNext() {
-	balanceSync();
 	let dealerDiv = document.querySelector('#dealer-cards');
 	dealerDiv.replaceChild(generateCard(dealer[1]), dealerDiv.childNodes[1]);
 	evaluateWin();
 	updateBalance();
+	balanceSync();
 	next.style.visibility = 'visible';
 	resetBet();
 	bet.style.visibility = 'hidden';
