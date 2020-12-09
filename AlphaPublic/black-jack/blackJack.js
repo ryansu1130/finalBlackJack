@@ -107,7 +107,7 @@ function compHand(player, dealer) {
 }
 
 function dealerBot() {
-	while (count(dealer) < 21 && compHand(player, dealer) == -1) {
+	while (count(dealer) <17 || count(dealer) < 21 && compHand(player, dealer) == -1) {
 		dealHand(dealer);
 	}
 	updateCards();
