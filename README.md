@@ -1,4 +1,3 @@
-![Alt text](/images/homepage.PNG)
 # Kaami Co. // CS-290 Final Project Fall 2020 - Team 8
 
 ####  An online gambling experience at the leisure of your own home!
@@ -106,4 +105,40 @@ images in this project were designed and created from scratch. He was also in ch
 assisting the implementation of modals. He also was in charge of server-side portions of the
 project to fully optimize the accessibility of our modules.
 
+## Blackjack Website Demo
 
+### Homepage
+![Alt text](/images/homepage.PNG)
+
+### How To Play
+![Alt text](/images/rules.PNG)
+
+### Inital Table
+![Alt text](/images/initTable.PNG)
+
+### Pre Bet
+![Alt text](/images/preBet.PNG)
+
+### Betting In Session
+![Alt text](/images/inSession.PNG)
+
+### Betting In Session
+![Alt text](/images/inSession2.PNG)
+
+### Player Busted
+![Alt text](/images/bust.PNG)
+
+### Player All In
+![Alt text](/images/Allin.PNG)
+
+### Player Won
+![Alt text](/images/won.PNG)
+
+### Player Tie With Dealer
+![Alt text](/images/tied.PNG)
+
+### Setting For Music Volume
+![Alt text](/images/setting.PNG)
+
+### About Page
+![Alt text](/images/about%20us.PNG)
