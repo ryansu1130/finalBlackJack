@@ -1,6 +1,13 @@
 # Kaami Co. // CS-290 Final Project Fall 2020 - Team 8
 
-####  An online gambling experience at the leisure of your own home!
+###  An online gambling experience at the leisure of your own home!
+
+### To run the program in your local environment:
+#### 1. Download this repo
+#### 2. Open this project with the terminal 
+#### 3. Run following commands without the quotes, Note you must have https://nodejs.org/en installed 
+#### "npm install" Note: Wait for the packages to install
+#### "npm run dev" Note: Open http://localhost:3000/ to interact with project
 
 ### Group Members
 
