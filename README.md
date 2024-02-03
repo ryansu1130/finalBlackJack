@@ -148,4 +148,4 @@ project to fully optimize the accessibility of our modules.
 ![Alt text](/images/setting.PNG)
 
 ### About Page
-![Alt text](/images/about%20us.PNG)
+![Alt text](/images/aboutUs.PNG)
